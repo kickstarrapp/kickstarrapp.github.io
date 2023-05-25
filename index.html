@@ -133,7 +133,7 @@ footer svg {
         <input id="tabA-4" type="radio" name="tabgroupA" />
         <label class="button toggle" for="tabA-4">Advanced Usage</label>
         <input id="tabA-5" type="radio" name="tabgroupA" />
-        <label class="button toggle" for="tabA-5">Video Demos</label>
+        <label class="button toggle" for="tabA-5">Screenshots/Videos</label>
         <input id="tabA-6" type="radio" name="tabgroupA" />
         <label class="button toggle" for="tabA-6">FAQ</label>
 
@@ -149,40 +149,14 @@ footer svg {
 
               <figure>
                 <img src="desktop.png" class="example" alt="What KickstarrTV looks like on a Kick live stream on a laptop" />
-                <figcaption>What KickstarrTV looks like on a Kick live stream on a laptop 4/15/23. <br />We are not associated with this channel, this is a typical example stream on Kick. <br /> Thank you to LovelyAlohi and check them out if you like this. </figcaption>
+                <figcaption>What KickstarrTV looks like on a Kick live stream on a laptop 5/25/23. <br />We are not associated with this channel, this is a typical example stream on Kick. <br /> Thank you to LovelyAlohi and check them out if you like this. </figcaption>
               </figure>
               <hr />
               <figure>
-                <img src="mobile1.png" class="example" alt="What KickstarrTV looks like on a Kick live stream on a mobile phone" />
-                <figcaption>What KickstarrTV looks like on a Kick live stream on a mobile phone with the options menu open 4/15/23. <br />We are not associated with this channel, this is a typical  example stream on Kick. <br />Thank you to BigE and check them out if you like this.</figcaption>
+                <img src="mobile.png" class="example" alt="What KickstarrTV looks like on a Kick live stream on a mobile phone" />
+                <figcaption>What KickstarrTV looks like on a Kick live stream on a mobile phone with the options menu open 5/25/23. <br />We are not associated with this channel, this is a typical  example stream on Kick. <br />Thank you to BigE and check them out if you like this.</figcaption>
               </figure>
               <hr />
-              <figure>
-                <img src="mobile2.png" class="example" alt="What KickstarrTV looks like on a Kick live stream on a mobile phone" />
-                <figcaption>What KickstarrTV looks like on a Kick live stream on a mobile phone with the options menu closed 4/15/23. <br />We are not associated with this channel, this is a typical  example stream on Kick. <br />Thank you to BigE and check them out if you like this.</figcaption>
-              </figure>
-              <hr />
-              <figure>
-                <img src="desktop_chat_on_screen.png" class="example" alt="What KickstarrTV looks like on a Kick live stream on a laptop" />
-                <figcaption>What KickstarrTV looks like on a Kick live stream on a laptop 5/15/23. <br />We are not associated with this channel, this is a typical example stream on Kick. <br /> Thank you to Alfie and check them out if you like this. </figcaption>
-              </figure>
-              <hr />
-
-              <figure>
-                <img src="stream_event_menu.png" class="example" alt="What KickstarrTV looks like on a Kick live stream on a laptop" />
-                <figcaption>KickstarrTV stream event menu on a Kick live stream on a laptop 5/22/23. You can toggle a running list of hosts, subs, clips and other events that have happened while this stream is live while watching the current stream. <br />We are not associated with this channel, this is a typical example stream on Kick. <br /> Thank you to nmgprodigy and check them out if you like this. </figcaption>
-              </figure>
-              <hr />
-
-              <figure>
-                <img src="desktop_chat_replay.png" class="example" alt="What KickstarrTV looks like on a Kick live stream on a laptop" />
-                <figcaption>KickstarrTV chat replay on a Kick VOD (chat from a video of past live stream) on a laptop 5/22/23. <br />We are not associated with this channel, this is a typical example stream on Kick. <br /> Thank you to Alfie and check them out if you like this. </figcaption>
-              </figure>
-              <hr />
-
-              
-
-              
 
               <p>
               Please check out these featured streamers below that are using KickstarrTV!
@@ -554,13 +528,65 @@ You can make your own share menu to use for your needs. For example, maybe you w
 
           <div class="tab">
             <div>
-              <h2>Video Demos</h2>
+              <h2>Screenshots/Videos</h2>
               <p>
 
-                Take a look at it in action from 4/15/23. <br />
-                In this video, we open the options menu and customize our stream setup in real time with a couple of the features. <br />
-                We are not associated with this channel, this is a typical example stream on Kick. <br /> 
-                Thank you to Moroney and check them out if you like this. <br />
+              <button id="loadScreenshots" onClick="load_screenshots();">Load screenshot demos</button><br />
+              <figure>
+                <img id="screenshot1" src="#" class="example" alt="What KickstarrTV looks like on a Kick live stream on a mobile phone" />
+                <figcaption>What KickstarrTV looks like on a Kick live stream on a mobile phone with the options menu closed 5/25/23. <br />We are not associated with this channel, this is a typical  example stream on Kick. <br /></figcaption>
+              </figure>
+              <hr />
+
+              <figure>
+                <img id="screenshot2" src="#" class="example" alt="What KickstarrTV looks like on a Kick live stream on a mobile phone" />
+                <figcaption>What KickstarrTV looks like on a Kick live stream on a mobile phone with the options menu closed 5/25/23. <br />We are not associated with this channel, this is a typical  example stream on Kick. <br /></figcaption>
+              </figure>
+              <hr />
+
+              <figure>
+                <img id="screenshot3" src="#" class="example" alt="What KickstarrTV looks like on a Kick live stream on a mobile phone" />
+                <figcaption>What KickstarrTV looks like on a Kick live stream on a mobile phone with the options menu closed 5/25/23. <br />We are not associated with this channel, this is a typical  example stream on Kick. <br /></figcaption>
+              </figure>
+              <hr />
+
+              <figure>
+                <img id="screenshot4" src="#" class="example" alt="What KickstarrTV looks like on a Kick live stream on a mobile phone" />
+                <figcaption>What KickstarrTV looks like on a Kick live stream on a mobile phone with the options menu closed 5/25/23. <br />We are not associated with this channel, this is a typical  example stream on Kick. <br /></figcaption>
+              </figure>
+              <hr />
+
+              <figure>
+                <img id="screenshot5" src="#" class="example" alt="What KickstarrTV looks like on a Kick live stream on a mobile phone" />
+                <figcaption>What KickstarrTV looks like on a Kick live stream on a mobile phone with the options menu closed 5/25/23. <br />We are not associated with this channel, this is a typical  example stream on Kick. <br /></figcaption>
+              </figure>
+              <hr />
+
+              <figure>
+                <img id="screenshot6" src="#" class="example" alt="What KickstarrTV looks like on a Kick live stream on a mobile phone" />
+                <figcaption>What KickstarrTV looks like on a Kick live stream on a mobile phone with the options menu closed 5/25/23. <br />We are not associated with this channel, this is a typical  example stream on Kick. <br /></figcaption>
+              </figure>
+              <hr />
+
+              <figure>
+                <img id="screenshot7" src="#" class="example" alt="What KickstarrTV looks like on a Kick live stream on a mobile phone" />
+                <figcaption>What KickstarrTV looks like on a Kick live stream on a mobile phone with the options menu closed 5/25/23. <br />We are not associated with this channel, this is a typical  example stream on Kick. <br /></figcaption>
+              </figure>
+              <hr />
+
+              <figure>
+                <img id="screenshot8" src="#" class="example" alt="What KickstarrTV looks like on a Kick live stream on a mobile phone" />
+                <figcaption>What KickstarrTV looks like on a Kick live stream on a mobile phone with the options menu closed 5/25/23. <br />We are not associated with this channel, this is a typical  example stream on Kick. <br /></figcaption>
+              </figure>
+              <hr />
+
+              <figure>
+                <img id="screenshot9" src="#" class="example" alt="What KickstarrTV looks like on a Kick live stream on a mobile phone" />
+                <figcaption>What KickstarrTV looks like on a Kick live stream on a mobile phone with the options menu closed 5/25/23. <br />We are not associated with this channel, this is a typical  example stream on Kick. <br /></figcaption>
+              </figure>
+              <hr />
+              
+
                 <button id="loadVideo" onClick="load_video();">Load Demo Video</button><br />
                 <video id="video" controls>
                     <source id="videoFile" type="video/webm" />
@@ -621,6 +647,38 @@ function load_video() {
   videoFile.src = "kickstarrdemo.webm";
   video.load();
   video.play();
+}
+
+function load_screenshots() {
+  console.log('loading screenshots');
+  var x = document.getElementById('screenshot1');
+  if (x) { x.src = 'screenshot1.png'; }
+  
+  var x = document.getElementById('screenshot2');
+  if (x) { x.src = 'screenshot2.png'; }
+
+  var x = document.getElementById('screenshot3');
+  if (x) { x.src = 'screenshot3.png'; }
+
+  var x = document.getElementById('screenshot4');
+  if (x) { x.src = 'screenshot4.png'; }
+
+  var x = document.getElementById('screenshot5');
+  if (x) { x.src = 'screenshot5.png'; }
+
+  var x = document.getElementById('screenshot6');
+  if (x) { x.src = 'screenshot6.png'; }
+
+  var x = document.getElementById('screenshot7');
+  if (x) { x.src = 'screenshot7.png'; }
+
+  var x = document.getElementById('screenshot8');
+  if (x) { x.src = 'screenshot8.png'; }
+
+  var x = document.getElementById('screenshot9');
+  if (x) { x.src = 'screenshot9.png'; }
+
+  return false;
 }
 </script>
 </body></html>
