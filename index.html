@@ -80,11 +80,24 @@ nav .brand, nav .menu a.pseudo.button {
 
 body .row img.example {
   max-width: 80%;
+  max-height: 1433px;
   margin: 0 auto;
 } 
 
 figcaption {
   text-align: center;
+}
+
+.row .panel {
+  background-color: lightgreen;
+}
+
+#learnMore1Content, #learnMore2Content, #learnMore3Content {
+  display: none;
+}
+
+#learnMore1Content.show, #learnMore2Content.show, #learnMore3Content.show {
+  display: block;
 }
 
 footer.footer {
@@ -130,13 +143,13 @@ footer svg {
         <input id="tabA-2" type="radio" name="tabgroupA" />
         <label class="button toggle" for="tabA-2">Install/Support</label>
         <input id="tabA-3" type="radio" name="tabgroupA" />
-        <label class="button toggle" for="tabA-3">Usage</label>
+        <label class="button toggle" for="tabA-3">Streams</label>
         <input id="tabA-4" type="radio" name="tabgroupA" />
         <label class="button toggle" for="tabA-4">Advanced Usage</label>
         <input id="tabA-5" type="radio" name="tabgroupA" />
         <label class="button toggle" for="tabA-5">Screenshots/Videos</label>
         <input id="tabA-6" type="radio" name="tabgroupA" />
-        <label class="button toggle" for="tabA-6">FAQ</label>
+        <label class="button toggle" for="tabA-6">VODs/Vids</label>
 
         <div class="row">
           
@@ -148,9 +161,8 @@ footer svg {
               </h2>
 
 <p>
-<a href='https://www.eventbrite.com/e/kickcon-unofficial-and-creator-lead-meetup-tickets-668958602187'>
-  Join us in Vegas TwitchCon week 2023 for KickCon!
-</a>
+<a href='https://www.eventbrite.com/e/kickcon-unofficial-and-creator-lead-meetup-tickets-668958602187'>Join us in Vegas TwitchCon week 2023 for KickCon!</a><br />
+<a href='#'>Join us in Dallas the weekend before TwitchCon 2023 for a Kick bash!</a><br />
 </p>
               <p>The features you have been waiting for in Kick.com streams!  Highlights, theming, chat logs, configurable chat filters, and more!</p>
 
@@ -219,31 +231,19 @@ footer svg {
               </figure>
               <hr />
 
-              <p>
-              Please check out these featured streamers below that are using KickStarrTV!
-              </p>
+              
 
-              <h5>
-              Chat Replay Testing
-              </h5>
-              <p>
-                With your browser extension installed, visit one of the following links below. You should see the saved chat populate to the side. Click on a timestamp and fast-forward to that part of the video. Filter and search chat as usual. Coming soon: better features to make it easier to find moments in pasts stream for clipping or good content for social media. The future is bright and exciting!
-              </p>
+              
 
-              <a href="https://kick.com/video/6ad98f7d-4630-46f2-b6e6-04278450af46">Ninja</a><br />
-              <a href="https://kick.com/video/43784a01-4a51-4085-9620-207277047444">Sommerset</a><br />
-              <a href="https://kick.com/video/75249f77-db09-44fa-bf1a-7178a86c458b">BigE</a><br />
-              <a href="https://kick.com/video/99a2f9e5-8ad8-4875-8d84-c9da1af5c2ad">zSarayu</a><br />
-
-              <p>Let us know if you would like to be on the list.</p>
-
-              <h5>
+              <h2>
                 I heard there is some questionable material on Kick that I don't want my child to see, such as streamed movies, gambling, and hot tub streams for 18+ . I won't use Kick because I/my child don't want to see any questionable material like has been talked about.
-              </h5>
+              </h2>
 
-              <p>
-                This browser extension comes with a stream filter built in that you can turn on or leave off. Using this filter, you can hide 99% of streams, pages and thumbnails that you personally don't want to see for yourself that may be considered "18+".
-                <br />
+<div class="panel">
+                This browser extension comes with a stream filter built in that you can turn on or leave off. Using this filter, you can hide 99% of streams, pages and thumbnails that you personally don't want to see for yourself that may be considered "18+". <a href="#" id="learnMore1">Learn more...</a>
+</div>
+
+<div id="learnMore1Content">
                 In the options menu, under the HIDE section, look for the "Parental Mode Options" section and you have several separate, individual checkboxes.
                 <ul>
                 <li>hide marked 18+ tag videos</li>
@@ -257,7 +257,7 @@ footer svg {
                 </ul>
 
                 <p>
-                Let's take "hide asmr category" as an example. Checking this box will hide the asmr category from being shown around the site, hide streams that are tagged asmr, and when you directly navigate to the asmr streams category page you will be redirected to the home page.
+                Let's take "hide asmr category" as an example. Checking this box will hide the asmr category from being shown around the site, hide streams that are tagged asmr, and when you directly navigate to the asmr streams category page you will be redirected to the home page. Note: you will be able to find 18+ material if you really try. This is just an initial filter for basic "18+ protection" if you so choose.
                 </p>
 
                 <figure>
@@ -268,31 +268,35 @@ footer svg {
 
                 <figure>
                   <img src="streamfilter2.png" class="example" alt="What KickStarrTV stream content filter looks like on a Kick live stream on a desktop" />
-                  <figcaption>What KickStarrTV looks like on a Kick homepage with the options menu open 6/30/23.<br />We are not associated with this channel, this is a typical example page on Kick.</figcaption>
+                  <figcaption>What the Kick homepage looks like with 18+ filter on 6/30/23.<br />We are not associated with this channel, this is a typical example page on Kick.</figcaption>
                 </figure>
                 <hr />
 
                 <figure>
                   <img src="streamfilter3.png" class="example" alt="What KickStarrTV stream content filter looks like on a Kick live stream on a desktop" />
-                  <figcaption>What KickStarrTV looks like on a Kick homepage with the options menu open 6/30/23.<br />We are not associated with this channel, this is a typical example page on Kick.</figcaption>
+                  <figcaption>What the Kick categories browse page looks like with 18+ filter on 6/30/23.<br />We are not associated with this channel, this is a typical example page on Kick.</figcaption>
                 </figure>
                 <hr />
 
                 <figure>
                   <img src="streamfilter4.png" class="example" alt="What KickStarrTV stream content filter looks like on a Kick live stream on a desktop" />
-                  <figcaption>What KickStarrTV looks like on a Kick homepage with the options menu open 6/30/23.<br />We are not associated with this channel, this is a typical example page on Kick.</figcaption>
+                  <figcaption>What the Kick streams browse page looks like with 18+ filter on 6/30/23.<br />We are not associated with this channel, this is a typical example page on Kick.</figcaption>
                 </figure>
-                <hr />
+</div>
 
-              </p>
 
-              <h5>
+
+
+
+
+              <h2>
                 I heard there is some bad words on Kick livestream chat that I don't want my child to see. I won't use Kick because I don't want to see any bad words or hate speech.
-              </h5>
+              </h2>
+<div class="panel">
+              This browser extension comes with a chat profanity filter built in that you can turn on or leave off. Using this filter, you can hide 90% of the phrases that you personally don't want to see for yourself that may be considered "18+". <a href="#" id="learnMore2">Learn more...</a>
+</div>
 
-              <p>
-              This browser extension comes with a profanity filter built in that you can turn on or leave off. Using this filter, you can hide 90% of the phrases that you personally don't want to see for yourself that may be considered "18+".
-              <br />
+<div id="learnMore2Content">
               In the options menu, under the HIDE section, look for the "Chat Filter Options" section and you have several separate, individual checkboxes.
               <ul>
               <li>sexual phrases will be replaced with xxx</li>
@@ -300,7 +304,6 @@ footer svg {
               <li>political people and terms  will be replaced with xxx</li>
               <li>negative/hate phrases  will be replaced with xxx</li>
               </ul>
-              </p>
 
               <figure>
                   <img src="profanityfilter1.png" class="example" alt="What KickStarrTV stream content filter looks like on a Kick live stream on a desktop" />
@@ -309,10 +312,56 @@ footer svg {
                 <hr />
 
               <figure>
-                  <img src="profanityfilter2.png" class="example" alt="What KickStarrTV stream content filter looks like on a Kick live stream on a desktop" />
-                  <figcaption>What KickStarrTV looks like on a Kick livestream 6/30/23.<br />We are not associated with this channel, this is a typical  example stream on Kick. <br />Thank you to Ninja and check them out if you like this.</figcaption>
-                </figure>
-                <hr />
+                  <img src="profanityfilter2.png" class="example" alt="What KickStarrTV looks like on a Kick livestream with a chat filter on, 6/30/23." />
+                  <figcaption>What KickStarrTV looks like on a Kick livestream with a chat filter on, 6/30/23.<br />We are not associated with this channel, this is a typical  example stream on Kick. <br />Thank you to Ninja and check them out if you like this.</figcaption>
+              </figure>
+</div>
+
+
+<h2>
+I heard you are testing out Stream Chat Replay on VODs for KickStarr "partners".  Am I in the list?
+</h2>
+<div class="panel">
+  <a href="#" id="learnMore3">Learn more...</a>
+</div>
+
+<div id="learnMore3Content">
+If you want to be on this list or be removed from this list, just contact us. We are NOT automatically saving every stream of everyone. For a few streamers that we notice on a day that we were testing, we save 1 or 2 streams to test functionality in different types of streams. There is no real logic or slant in who we choose besides "has some numbers or is live a lot". For people in this list, contact us for a stream key to upload your own saved chats for every stream you want to. <br />
+
+Alfie <br />
+AndyMilonakis <br />
+Azalea22 <br />
+Azralynn <br />
+bewitching <br />
+BigE <br />
+bunnymontv <br />
+Chopstix <br />
+cloakzy <br />
+EseMenaTob <br />
+evanpurp <br />
+fresh <br />
+JaredFPS <br />
+jesss<br />
+lindsywood <br />
+Loochy <br />
+maddynf <br />
+meloniemac <br />
+MissPositivity <br />
+mmamallamaface <br />
+Ninja <br />
+NobletOfU <br />
+Odablock <br />
+Sommerset <br />
+StormBreaker <br />
+Rita <br />
+TaylorStarlight <br />
+xQc <br />
+zSarayu <br />
+</div>
+
+
+<p>This is generally updated on the weekends so check back for new features and updates if you wish. You can contact us with feature requests or questions. All the best streaming on Kick, long live the web and hope to see in Vegas October 2023 for our Kick streamers party!</p>
+              
 
             </div>
           </div>
@@ -393,39 +442,12 @@ footer svg {
 
           <div class="tab">
             <div>
-              <h2>Usage</h2>
+              <h2>Stream Usage</h2>
               <p>
                 
                 <h3>Basic Extension Usage on Kick:</h3>
 
-                <p>For this documentation, "livestream" will refer to the video on https://kick.com/username .</p>
-                <p>For this documentation, "video" will refer to a VOD/Video On Demand/Previous Stream/Replay at https://kick.com/video/videoID . </p>
-
-                <h5>View previously saved chat on a video manually:</h5>
-                1a) watch a livestream and save the chat using this extension. <br />
-                1b) or have someone give you the exported chat file they exported from a stream using this extension. <br />
-                2a) load the video the chat is from. <br />
-                2b) Manually import the chat to view on the side using this extension drop down menu in the options menu. <br />
-
-                <h5>View previously saved chat on a video for KickStarr partners:</h5>
-                For a limited, select amount of KickStarr partners (not Kick itself) at launch in June 2023, we will host chat replay to auto-show on video load. <br />
-                1) load the video. <br />
-                2) for these channels, if there is a livestream chat saved, it will auto-populate to the side as a chat replay
-
-                <h5>Sharing timestamps on Kick video comments</h5>
-                Open a video such as example: https://kick.com/video/4c107dad-c915-4192-80a8-8e66815f6263?t=120 <br />
-                The video should start playing 2 minutes in from the beginning according to that timestamp link. 120 seconds = 2 minutes<br />
-
-                <h5>Timestamp links on Kick chat replays</h5>
-                Visit a url like https://kick.com/video/4c107dad-c915-4192-80a8-8e66815f6263 <br />
-                Play the video. <br />
-                If you see timestamps associated with each chat message, such as 6:31PM, click on one. <br />
-                Assuming the first chat message is at the start of the stream, the video should start playing fast-forwarding to the time in the video of the timestamp.<br />
-                For example, you see the first chat message is 6:00PM and you click on a chat replay timestamp of 6:31PM. The livestream replay will fast-forward to 31 minutes into the video. This is not perfect, but will give you a reference on how to look back and find moments in a long stream video by looking through chat.<br />
-
-                <h5>Scrolling, filtering, searching, etc...</h5>
-                On chat replays on videos, you are able to use most of the livestream functionality of KickStarr to theme, scroll, filter, search, etc the chat on it.<br />
-                <hr />
+                <p>For this documentation, "livestream" will refer to the live video on https://kick.com/username .</p>
 
                 <h3>Basic Usage on Kick LiveStreams:</h3>
                 <h5>Load an active livestream with chat on Kick</h5>
@@ -477,6 +499,8 @@ footer svg {
 
                 <h5>Options Menu</h5>
                 Options Menu: Press the cog icon in the main menu to open the options menu. The Options Menu is divided into these sections:
+
+                <strong>turn on auto-saving of chat</strong> -- this turns on logging (to your device) of chat for reading back.
 
                 <ul>
                 <li>Theme</li>
@@ -540,6 +564,14 @@ footer svg {
                   <option>hide USA English profanity from list in chat.</option>
                   <option>hide USA English political words from list in chat.</option>
                   <option>hide USA English negative/slur words from list in chat.</option>
+                  <option>hide marked 18+ tag videos</option>
+                  <option>hide other-tv-shows-movies category</option>
+                  <option>hide just-sleeping category</option>
+                  <option>hide asmr category</option>
+                  <option>hide body-art category</option>
+                  <option>hide gambling category</option>
+                  <option>hide pools-hot-tubs-bikinis category</option>
+                  <option>hide just-chatting category</option>
                 </select>
 <hr>
                 <select>
@@ -671,10 +703,6 @@ You can import chats to view or search from other Kick streams or past streams o
 By turning on this feature...<br />
 You can make your own share menu to use for your needs. For example, maybe you want a one click share your clips to your Discord server, your Minds account, your own website, or whatever you want. You can customize the share menu included to contain what you use. <br />
 
-
-
-
-
               </p>
             </div>
           </div>
@@ -685,23 +713,32 @@ You can make your own share menu to use for your needs. For example, maybe you w
               <p>
 
               <button id="loadScreenshots" onClick="load_screenshots();">Load screenshot demos</button><br />
+
               <figure>
-                <img id="screenshot1" src="#" class="example" alt="What KickStarrTV looks like on a Kick live stream on a Macbook 5/25/23" />
-                <figcaption>What KickStarrTV looks like on a Kick live stream on a Macbook 5/25/23. <br />We are not associated with this channel, this is a typical  example stream on Kick. <br /></figcaption>
+                <img id="screenshot0" src="#" class="example" alt="What KickStarrTV looks like on a Kick live stream on a Macbook 7/2/23" />
+                <figcaption>What KickStarrTV looks like on a Kick live stream on a Macbook 7/2/23. <br />We are not associated with this channel, this is a typical example stream on Kick. <br /></figcaption>
+              </figure>
+              <hr />              
+
+              <figure>
+                <img id="screenshot1" src="#" class="example" alt="Searching chat on a Kick live stream on 7/2/23" />
+                <figcaption>Searching chat on a Kick live stream on 7/2/23. <br />We are not associated with this channel, this is a typical example stream on Kick. <br /></figcaption>
               </figure>
               <hr />
 
               <figure>
-                <img id="screenshot2" src="#" class="example" alt="What KickStarrTV looks like on a Kick live stream on a Linux cpu 5/25/23" />
-                <figcaption>What KickStarrTV looks like on a Kick live stream on a Linux cpu 5/25/23. <br />We are not associated with this channel, this is a typical  example stream on Kick. <br /></figcaption>
+                <img id="screenshot2" src="#" class="example" alt="Extra KickStarrTV VOD features on a Kick replay 7/2/23" />
+                <figcaption>Extra KickStarrTV VOD features on a Kick replay 7/2/23. <br />We are not associated with this channel, this is a typical example stream on Kick. <br /></figcaption>
               </figure>
               <hr />
 
               <figure>
-                <img id="screenshot3" src="#" class="example" alt="What KickStarrTV looks like on a Kick live stream on an HP Windows PC 5/25/23" />
-                <figcaption>What KickStarrTV looks like on a Kick live stream on a HP Windows PC 5/25/23. <br />We are not associated with this channel, this is a typical  example stream on Kick. <br /></figcaption>
+                <img id="screenshot3" src="#" class="example" alt="KickStarrTV events tab and highlights on a Kick live stream on 7/2/23" />
+                <figcaption>KickStarrTV events tab and highlights on a Kick live stream on 7/2/23. <br />We are not associated with this channel, this is a typical example stream on Kick. <br /></figcaption>
               </figure>
               <hr />
+
+
 
               <figure>
                 <img id="screenshot4" src="#" class="example" alt="What KickStarrTV looks like on a Kick live stream on a mobile phone 5/25/23" />
@@ -751,10 +788,60 @@ You can make your own share menu to use for your needs. For example, maybe you w
 
           <div class="tab">
             <div>
-              <h2>FAQ</h2>
-              <p>
-                Coming soon...
+              <h2>VODS/Videos</h2>
+              <p>                
+                This browser extension supplies a number of features for past streams on Kick, also known as VODS. <br />
+                For this documentation, "video" will refer to a VOD/Video On Demand/Previous Stream/Replay at https://kick.com/video/videoID . <br />
+                Some of these requested features are speed up video, share links to specific parts of the video, and view chat on replay.
               </p>
+
+              <h3>View previously saved chat on a video manually:</h3>
+                1a) watch a live stream and log the chat using this extension. <br />
+                1b) or have someone give you the exported chat file they exported from a stream using this extension. <br />
+                2a) load and watch the video the chat is from. <br />
+                2b) Manually import the chat to view using this extension "Import Chat" in the options menu.
+              <hr />
+
+              <h3>View previously saved chat on a video for KickStarr partners:</h3>
+                For a limited, select amount of KickStarr partners (not Kick itself) at launch in July 2023, we will host chat replay to auto-show if you use the extension automatically on video load. <br />
+                1) load and watch the video the chat is from. <br />
+                2) for these channels, if there is a livestream chat saved by the streamer, it will auto-populate to the side as a chat replay.
+              <hr />
+
+              <h3>Opening timestamped Kick videos</h3>
+                Open a video such as example: https://kick.com/video/a1b2?t=120 <br />
+                The video should start playing 2 minutes in from the beginning according to that timestamp link. 120 seconds = 2 minutes<br />
+                If you are using the extension, using ?t=seconds in a link will play the video that many seconds into the video.
+              <hr />
+
+              <h3>Sharing timestamped Kick video</h3>
+                Open a video such as example: https://kick.com/video/a1b2 <br />
+                If you are using the extension, open the options menu and click the SHARE category. <br />
+                Click the "Share" button below to copy the general link to this video. <br />
+                Click the "Share" button below again to copy the link to this specific time in the video. <br />
+                Example: it will copy something like https://kick.com/video/a1b2?t=704 . <br />
+                Paste this link somewhere else, or use the share menu to directly share it to a social platform.
+              <hr />
+
+              <h3>Timestamp links on Kick chat replays</h3>
+                Open a video with chat replay such as example: https://kick.com/video/a1b2 <br />
+                Play the video. <br />
+                If you see timestamps associated with each chat message, such as 6:31PM, click on one. <br />
+                Assuming the first chat message is at the start of the stream, the video should start playing fast-forwarding to the time in the video of the timestamp.<br />
+                For example, you see the first chat message is 6:00PM and you click on a chat replay timestamp of 6:31PM. The livestream replay will fast-forward to 31 minutes into the video. This is not perfect, but will give you a reference on how to look back and find moments in a long stream video by looking through chat.
+              <hr />
+
+              <h3>Video speed on replay</h3>
+                Open a video such as example: https://kick.com/video/a1b2 <br />
+                If you are using the extension, there will be a new icon between time remaining in video &amp; picture in picture icons. This icon is select the playback speed of the video.  <br />
+                Click this icon to reveal a popup menu. Clicking on an option in the popup menu will change the video speed.<br />
+                The video speed options for now are 1 (normal playback), .25 (very slow playback) to 2 (twice as fast playback).
+              <hr />              
+
+              <h3>Scrolling, filtering, searching, etc...</h3>
+              On chat replays on videos, you are able to use most of the livestream functionality of KickStarr to theme, scroll, filter, search, etc the chat on it to find particular chats or moments you have been looking for.
+              <hr />
+
             </div>
           </div>
 
@@ -804,6 +891,9 @@ function load_video() {
 
 function load_screenshots() {
   console.log('loading screenshots');
+  var x = document.getElementById('screenshot0');
+  if (x) { x.src = 'screenshot0.png'; }
+
   var x = document.getElementById('screenshot1');
   if (x) { x.src = 'screenshot1.png'; }
   
@@ -833,5 +923,46 @@ function load_screenshots() {
 
   return false;
 }
+
+var y = document.getElementById('learnMore1');
+if (y) { y.addEventListener('click', learnMore1_handler); }
+
+var y = document.getElementById('learnMore2');
+if (y) { y.addEventListener('click', learnMore2_handler); }
+
+var y = document.getElementById('learnMore3');
+if (y) { y.addEventListener('click', learnMore3_handler); }
+
+function learnMore1_handler(e) {
+  e.preventDefault();
+  if (document.getElementById('learnMore1Content').classList.contains('show') ) {
+    document.getElementById('learnMore1Content').classList.remove('show');
+  } else {
+    document.getElementById('learnMore1Content').classList.add('show');
+  }
+  return false;
+}
+
+function learnMore2_handler(e) {
+  e.preventDefault();
+  if (document.getElementById('learnMore2Content').classList.contains('show') ) {
+    document.getElementById('learnMore2Content').classList.remove('show');
+  } else {
+    document.getElementById('learnMore2Content').classList.add('show');
+  }
+  return false;
+}
+
+function learnMore3_handler(e) {
+  e.preventDefault();
+  if (document.getElementById('learnMore3Content').classList.contains('show') ) {
+    document.getElementById('learnMore3Content').classList.remove('show');
+  } else {
+    document.getElementById('learnMore3Content').classList.add('show');
+  }
+  return false;
+}
+
+
 </script>
 </body></html>
