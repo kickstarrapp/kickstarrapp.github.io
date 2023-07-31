@@ -1,0 +1,2323 @@
+<!DOCTYPE html>
+<html class="no-js h-100" lang="en">
+<head>
+  
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>KickStarrTV - browser extension for Kick livestreams to level up your chatting experience</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta http-equiv="cleartype" content="on">
+<meta name="author" content="biolithic">
+<meta name="copyright" content="biolithic 2023" />
+<meta name="apple-mobile-web-app-title" content="KickStarrTV">
+<meta name="application-name" content="KickStarrTV">
+<title>KickStarrTV - browser extension for Kick livestreams to level up your chatting experience</title>
+<meta name="description" content="KickStarrTV - browser extension for Kick livestreams to level up your chatting experience">
+
+<meta property="og:title" content="KickStarrTV - browser extension for Kick livestreams to level up your chatting experience" />
+<meta property="og:description" content="KickStarrTV - browser extension for Kick livestreams to level up your chatting experience" />
+<meta property="og:image" content="apple-touch-icon.png" />
+<meta property="og:url" content="https://KickStarrapp.github.io/">
+
+<meta property="twitter:title" content="KickStarrTV - browser extension for Kick livestreams to level up your chatting experience" />
+<meta property="twitter:description" content="KickStarrTV - browser extension for Kick livestreams to level up your chatting experience" />
+<meta property="twitter:image" content="apple-touch-icon.png" />
+<meta property="twitter:card" content="https://KickStarrapp.github.io">
+
+<meta name="msapplication-TileColor" content="#53FC18">
+<meta name="theme-color" content="#53FC18">
+
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="194x194" href="favicon-194x194.png">
+<link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="mask-icon" href="safari-pinned-tab.svg" color="#53FC18">
+<link rel="shortcut icon" type="image/x-icon" href="apple-touch-icon.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+
+<link rel="canonical" href="https://KickStarrapp.github.io/">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+<link rel="stylesheet" href="https://dbxmjjzl5pc1g.cloudfront.net/d7ec8d62-990b-4b91-9a53-ac3654c66f17/build/assets/app.7356f279.css" />
+
+
+<style>
+
+nav {
+  background: #000;
+}
+
+nav .brand, nav .menu a.pseudo.button {
+  color: #555;
+}
+
+.splash {
+  height: 100vh;
+  width: 100%;
+  background-color: #000;  
+  background: url(background.jpg);
+  text-align: center;
+  color: #53FC18;
+  padding-top: 4rem;
+  background-origin: content-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.splash button.success, .button {
+  background: #53FC18;
+}
+
+.content {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+body .row img.example {
+  max-width: 80%;
+  max-height: 1433px;
+  margin: 0 auto;
+} 
+
+figcaption {
+  text-align: center;
+}
+
+.row .panel {
+  background-color: lightgreen;
+}
+
+#learnMore1Content, #learnMore2Content, #learnMore3Content {
+  display: none;
+}
+
+#learnMore1Content.show, #learnMore2Content.show, #learnMore3Content.show {
+  display: block;
+}
+
+footer.footer {
+  width: 100%;
+  height: 8rem;
+  background: #000;
+  color: #aaa;
+}
+
+footer.footer a {
+  color: #53FC18;
+  float: left;
+  margin-right: 10px;
+}
+
+footer svg {
+  width: 3rem;
+}
+
+#example {
+  background-color: #fff;
+  padding: 3px;
+  width: 49%; display: block; position: relative; float: left;
+  overflow-x: hidden;
+}
+
+#chat-history-list {
+  color: rgb(214, 224, 234);
+  background-color: rgb(6, 23, 38);
+}
+
+#options {
+  background-color: darkgrey;
+  width: 49%; display: block; position: relative; float: left;
+}
+
+input[type=checkbox], input[type=radio] {
+  opacity: 1;
+  width: 30px;
+}
+
+#options div {
+  padding: 1rem;
+}
+
+footer.footer {
+  clear: both;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+#chatroom {
+  background-color: rgb(15, 18, 20);  
+}
+
+.chat-entry-content {
+  color: #fff;
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+   <a href="/" class="brand"><span>KickStarrTV</span></a>
+   <div class="menu"><a href="#contact" class="button icon-file-code">Contact Us</a></div>
+</nav>
+      
+<main class="intro test">
+  
+  <div class="splash">
+    <h1>KickStarrTV</h1>
+    <h3>Browser Extension for Kick Livestream Chats</h3>
+    <h3>Fun chat ideas with rizz</h3>
+    <h3><a href="https://www.twitchcon.com/en/las-vegas-2023/" title="Link to TwitchCon 2023 official information">Meet us at TwitchCon 2023 Vegas</a></h3>
+    <a class="button" href="https://www.streameranalytics.com/KickStarr102.zip">Download V.1.0.2 7/2/2023</a>
+  </div>
+
+  <div class="content">
+
+    <h1>Kick Chat Theme Generator</h1>
+
+    <img class="responsive image" src="obs_browser_css.png" alt="OBS Browser Source Screenshot">
+
+    <h3>Instructions</h3>
+    <p>If you stream on Kick from OBS like the above screenshot, you can easily generate "Custom CSS" from below on this page to copy and paste in the box in the place pictured in the screenshot above to theme your on-screen chat and make it look pretty or however you want according to your brand. You would put the browser source website to something like: https://kick.com/sethdrums/chatroom . You get this unique link per channel by clicking on the "Pop Out Chat" option on your current live-stream.</p>
+
+    <p>(0, black or leave blank for default Kick settings. Use white/#fff for a transparent effect if possible.)</p>
+    <p>This is based on the Kick.com dark theme as of 7-30-2023.</p>
+
+  <div id="options">
+      
+      <h3 style="display: none;">Profile Pictures:</h3>
+      <section style="display: none;">
+        <div>
+          <label for="scbtprofilepicture1">hide profile pictures: </label><input type="checkbox" id="scbtprofilepicture1" >
+        </div>
+        <div>
+          <label for="scbtprofilepicture2">profile picture size: </label><input type="number" id="scbtprofilepicture2">
+        </div>
+      </section>
+
+
+      <h3>Usernames:</h3>
+      <section>
+        <div>
+          <label for="scbtusername13">hide timestamps: </label><input type="checkbox" id="scbtusername13">
+        </div>
+        <div>
+          <label for="scbtusername0">hide usernames: </label><input type="checkbox" id="scbtusername0">
+        </div>
+        <div>
+          <label for="scbtusername1">font size: </label><input type="number" id="scbtusername1">
+        </div>
+        <div>
+          <label for="scbtusername2">font color: </label><input type="color" id="scbtusername2">
+        </div>
+        <div>
+          <label for="scbtusername3">line height: </label><input type="number" id="scbtusername3">
+        </div>
+        <div>
+          <label for="scbtusername4">hide badges: </label><input type="checkbox" id="scbtusername4">
+        </div>
+        <div>
+          <label for="scbtusername5">broadcaster color: </label><input type="color" id="scbtusername5">
+        </div>
+        <div>
+          <label for="scbtusername6">moderator color: </label><input type="color" id="scbtusername6">
+        </div>
+        <div>
+          <label for="scbtusername9">sub color: </label><input type="color" id="scbtusername9">
+        </div>
+
+        <div>
+          <label for="scbtusername8">og color: </label><input type="color" id="scbtusername8">
+        </div>
+
+        <div>
+          <label for="scbtusername10">founder color: </label><input type="color" id="scbtusername10">
+        </div>
+
+        <div>
+          <label for="scbtusername11">verified color: </label><input type="color" id="scbtusername11">
+        </div>
+
+        <div>
+          <label for="scbtusername12">VIP color: </label><input type="color" id="scbtusername12">
+        </div>
+
+        <div>
+          <label for="scbtusername7">all badges color: </label><input type="color" id="scbtusername7">
+        </div>
+
+        <div>
+          <label for="scbtusername14">all badges size: </label><input type="number" id="scbtusername14">
+        </div>
+        
+      </section>
+
+<hr />
+
+      <h3>Messages:</h3>
+      <section>
+        <div>
+          <label for="scbtmessage0">hide messages: </label><input type="checkbox" id="scbtmessage0">
+        </div>
+        <div>
+          <label for="scbtmessage1">font size: </label><input type="number" id="scbtmessage1">
+        </div>
+        <div>
+          <label for="scbtmessage2">font color: </label><input type="color" id="scbtmessage2">
+        </div>
+        <div>
+          <label for="scbtmessage3">line height: </label><input type="number" id="scbtmessage3">
+        </div>
+        <div>
+          <label for="scbtmessage4">on new line: </label><input type="checkbox" id="scbtmessage4">
+        </div>
+        <div>
+          <label for="scbtmessage5">text only: </label><input type="checkbox" id="scbtmessage5">
+        </div>
+      </section>
+
+<hr />
+
+      <h3>Background:</h3>
+      <section>
+        <div>
+          <label for="scbtbackground1">chat background color: </label><input type="color" id="scbtbackground1">
+          <input type="range" id="scbtbackground2" min="0" max="1" value="0" step="0.01">
+        </div>
+        <div>
+          <label for="scbtbackground3">username background color: </label><input type="color" id="scbtbackground3">
+          <input type="range" id="scbtbackground4" min="0" max="1" value="0" step="0.01">
+        </div>
+        <div>
+          <label for="scbtbackground5">message background color: </label><input type="color" id="scbtbackground5">
+          <input type="range" id="scbtbackground6" min="0" max="1" value="0" step="0.01">
+        </div>
+      </section>
+
+      <h1>COPY AND PASTE BELOW</h1>
+      <textarea id="output"></textarea>
+    </div>
+    <div id="example">
+      <h3>Example LiveStream Chat</h3>
+
+<div id="chatroom" class="flex h-full max-h-full flex-col">
+   <div id="chatroom-top" class="flex flex-col">
+      <div class="flex h-11 flex-row items-center justify-between border-b-2 border-b-secondary-lighter px-3.5" channel-slug="nerdyrapture">
+         <div class="cursor-pointer opacity-100">
+            <div class="base-icon" style="width: 16px; height: 16px;">
+               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12.5994 9.16639L11.5258 10.24L12.7608 11.4706L15.9946 8.23684L12.7608 5.00305L11.5258 6.23372L12.7085 7.42075H1.99463V9.16639H12.5994Z" fill="currentColor"></path>
+                  <path d="M10.7399 11.7282H2.01168V13.4738H10.7399V11.7282Z" fill="currentColor"></path>
+                  <path d="M10.7399 3H2.01168V4.74564H10.7399V3Z" fill="currentColor"></path>
+               </svg>
+            </div>
+         </div>
+         <div class="flex flex-row items-center text-center"><span class="text-base font-bold" style="color: #fff">Chat</span></div>
+         <div class="w-4 bg-transparent"></div>
+      </div>
+      <!----><!----><!---->
+      <div data-v-be5e9d85="" class="relative">
+         <!---->
+      </div>
+   </div>
+   <div class="relative flex grow flex-col overflow-hidden">
+      <!---->
+      <div data-v-5e52272e="" class="overflow-y-scroll py-3">
+
+         <div data-v-5e52272e="" data-chat-entry="1690738601149833" class="mt-0.5">
+            <div class="chat-entry">
+               <!---->
+               <div>
+                  <div data-v-ff75f4fc="" class="inline-block text-xs font-semibold text-gray-400">10:36AM</div>
+                  <!---->
+                  <span data-v-bb151e01="" class="chat-message-identity">
+                     <span data-v-bb151e01="" class="inline-flex translate-y-[3px] mr-1">
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-8bcf93d3="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-8bcf93d3="" class="cls-2" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-4" points="10 6 8 8 8 9 10 9.03 10 18 14 18 14 6 10 6"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-1" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-3" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_301_17810)">
+                                       <path d="M7.99999 9.14999V6.62499L0.484985 3.35999V6.34499L1.15499 6.63499V12.73L7.99999 15.995V9.14999Z" fill="#0269D4"></path>
+                                       <path d="M8.00003 10.735V9.61501L1.15503 6.63501V7.70501L8.00003 10.735Z" fill="#0269D4"></path>
+                                       <path d="M15.515 3.355V6.345L14.85 6.64V12.73L12.705 13.755L11.185 14.48L8.00499 15.995V6.715L4.81999 5.295H4.81499L3.29499 4.61L0.484985 3.355L3.66999 1.935L3.67999 1.93L5.09499 1.3L8.00499 0L10.905 1.3L12.32 1.925L12.33 1.935L15.515 3.355Z" fill="#04D0FF"></path>
+                                       <path d="M14.845 6.63501V7.70501L8 10.735V9.61501L14.845 6.63501Z" fill="#0269D4"></path>
+                                    </g>
+                                    <defs>
+                                       <clipPath id="clip0_301_17810">
+                                          <rect width="16" height="16" fill="white"></rect>
+                                       </clipPath>
+                                    </defs>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                     </span>
+                     <span data-v-b433ad78="" data-v-bb151e01="" class="chat-entry-username" data-chat-entry-user="giritis" data-chat-entry-user-id="2873175" style="color: rgb(211, 153, 255);">Giritis</span>
+                  </span>
+                  <span class="font-bold text-white">: </span><span data-v-89ba08de=""><span data-v-89ba08de="" class="chat-entry-content">TnX</span></span><!---->
+               </div>
+               <!---->
+            </div>
+         </div>
+         <div data-v-5e52272e="" data-chat-entry="1690738613760000" class="mt-0.5">
+            <div class="chat-entry">
+               <!---->
+               <div>
+                  <div data-v-ff75f4fc="" class="inline-block text-xs font-semibold text-gray-400">10:36AM</div>
+                  <!---->
+                  <span data-v-bb151e01="" class="chat-message-identity">
+                     <span data-v-bb151e01="" class="inline-flex translate-y-[3px] mr-1">
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-c644053e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon class="cls-4" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17" data-v-c644053e=""></polygon>
+                                    <polygon class="cls-2" points="17 14 17 8 14 11 12 7 10 11 7 8 7 14 17 14" data-v-c644053e=""></polygon>
+                                    <rect class="cls-2" x="7" y="15" width="10" height="2" data-v-c644053e=""></rect>
+                                    <polygon class="cls-3" points="7 4 4 7 4 9 9 4 7 4" data-v-c644053e=""></polygon>
+                                    <polygon class="cls-1" points="22 17 20 16 16 20 17 22 22 17" data-v-c644053e=""></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-09641b1e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-09641b1e="" class="cls-4" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-09641b1e="" class="cls-3" points="10.34 17.25 6.44 13.35 8.24 11.56 10.34 13.67 16.21 7.81 18 9.6 10.34 17.25"></polygon>
+                                    <polygon data-v-09641b1e="" class="cls-2" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-09641b1e="" class="cls-1" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                     </span>
+                     <span data-v-b433ad78="" data-v-bb151e01="" class="chat-entry-username" data-chat-entry-user="botrix" data-chat-entry-user-id="1160406" style="color: rgb(117, 253, 70);">BotRix</span>
+                  </span>
+                  <span class="font-bold text-white">: </span><span data-v-89ba08de=""><span data-v-89ba08de="" class="chat-entry-content">Support my full-time streaming by tapping that subscribe button &lt;3!</span></span><!---->
+               </div>
+               <!---->
+            </div>
+         </div>
+         <div data-v-5e52272e="" data-chat-entry="1690738615288721" class="mt-0.5">
+            <div class="chat-entry">
+               <!---->
+               <div>
+                  <div data-v-ff75f4fc="" class="inline-block text-xs font-semibold text-gray-400">10:36AM</div>
+                  <!---->
+                  <span data-v-bb151e01="" class="chat-message-identity">
+                     <span data-v-bb151e01="" class="inline-flex translate-y-[3px] mr-1">
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-8bcf93d3="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-8bcf93d3="" class="cls-2" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-4" points="10 6 8 8 8 9 10 9.03 10 18 14 18 14 6 10 6"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-1" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-3" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_301_17810)">
+                                       <path d="M7.99999 9.14999V6.62499L0.484985 3.35999V6.34499L1.15499 6.63499V12.73L7.99999 15.995V9.14999Z" fill="#0269D4"></path>
+                                       <path d="M8.00003 10.735V9.61501L1.15503 6.63501V7.70501L8.00003 10.735Z" fill="#0269D4"></path>
+                                       <path d="M15.515 3.355V6.345L14.85 6.64V12.73L12.705 13.755L11.185 14.48L8.00499 15.995V6.715L4.81999 5.295H4.81499L3.29499 4.61L0.484985 3.355L3.66999 1.935L3.67999 1.93L5.09499 1.3L8.00499 0L10.905 1.3L12.32 1.925L12.33 1.935L15.515 3.355Z" fill="#04D0FF"></path>
+                                       <path d="M14.845 6.63501V7.70501L8 10.735V9.61501L14.845 6.63501Z" fill="#0269D4"></path>
+                                    </g>
+                                    <defs>
+                                       <clipPath id="clip0_301_17810">
+                                          <rect width="16" height="16" fill="white"></rect>
+                                       </clipPath>
+                                    </defs>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge badge-tooltip ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-9200dfef="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-9200dfef="" class="cls-4" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-3" points="12 6 14.12 9.88 18 12 14.12 14.12 12 18 9.88 14.12 6 12 9.88 9.88 12 6"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-2" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-1" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                     </span>
+                     <span data-v-b433ad78="" data-v-bb151e01="" class="chat-entry-username" data-chat-entry-user="mythrii" data-chat-entry-user-id="7193072" style="color: rgb(255, 196, 102);">MythriI</span>
+                  </span>
+                  <span class="font-bold text-white">: </span><span data-v-89ba08de=""><span data-v-89ba08de="" class="chat-entry-content">^</span></span><!---->
+               </div>
+               <!---->
+            </div>
+         </div>
+         <div data-v-5e52272e="" data-chat-entry="1690738622799526" class="mt-0.5">
+            <div class="chat-entry">
+               <!---->
+               <div>
+                  <div data-v-ff75f4fc="" class="inline-block text-xs font-semibold text-gray-400">10:37AM</div>
+                  <!---->
+                  <span data-v-bb151e01="" class="chat-message-identity">
+                     <span data-v-bb151e01="" class="inline-flex translate-y-[3px] mr-1">
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-8bcf93d3="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-8bcf93d3="" class="cls-2" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-4" points="10 6 8 8 8 9 10 9.03 10 18 14 18 14 6 10 6"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-1" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-3" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_301_17810)">
+                                       <path d="M7.99999 9.14999V6.62499L0.484985 3.35999V6.34499L1.15499 6.63499V12.73L7.99999 15.995V9.14999Z" fill="#0269D4"></path>
+                                       <path d="M8.00003 10.735V9.61501L1.15503 6.63501V7.70501L8.00003 10.735Z" fill="#0269D4"></path>
+                                       <path d="M15.515 3.355V6.345L14.85 6.64V12.73L12.705 13.755L11.185 14.48L8.00499 15.995V6.715L4.81999 5.295H4.81499L3.29499 4.61L0.484985 3.355L3.66999 1.935L3.67999 1.93L5.09499 1.3L8.00499 0L10.905 1.3L12.32 1.925L12.33 1.935L15.515 3.355Z" fill="#04D0FF"></path>
+                                       <path d="M14.845 6.63501V7.70501L8 10.735V9.61501L14.845 6.63501Z" fill="#0269D4"></path>
+                                    </g>
+                                    <defs>
+                                       <clipPath id="clip0_301_17810">
+                                          <rect width="16" height="16" fill="white"></rect>
+                                       </clipPath>
+                                    </defs>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                     </span>
+                     <span data-v-b433ad78="" data-v-bb151e01="" class="chat-entry-username" data-chat-entry-user="giritis" data-chat-entry-user-id="2873175" style="color: rgb(211, 153, 255);">Giritis</span>
+                  </span>
+                  <span class="font-bold text-white">: </span><span data-v-89ba08de=""><span data-v-89ba08de="" class="chat-entry-content">my love</span></span><!---->
+               </div>
+               <!---->
+            </div>
+         </div>
+         <div data-v-5e52272e="" data-chat-entry="1690738625744333" class="mt-0.5">
+            <div class="chat-entry">
+               <!---->
+               <div>
+                  <div data-v-ff75f4fc="" class="inline-block text-xs font-semibold text-gray-400">10:37AM</div>
+                  <!---->
+                  <span data-v-bb151e01="" class="chat-message-identity">
+                     <span data-v-bb151e01="" class="inline-flex translate-y-[3px] mr-1">
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-8bcf93d3="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-8bcf93d3="" class="cls-2" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-4" points="10 6 8 8 8 9 10 9.03 10 18 14 18 14 6 10 6"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-1" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-3" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_301_17810)">
+                                       <path d="M7.99999 9.14999V6.62499L0.484985 3.35999V6.34499L1.15499 6.63499V12.73L7.99999 15.995V9.14999Z" fill="#0269D4"></path>
+                                       <path d="M8.00003 10.735V9.61501L1.15503 6.63501V7.70501L8.00003 10.735Z" fill="#0269D4"></path>
+                                       <path d="M15.515 3.355V6.345L14.85 6.64V12.73L12.705 13.755L11.185 14.48L8.00499 15.995V6.715L4.81999 5.295H4.81499L3.29499 4.61L0.484985 3.355L3.66999 1.935L3.67999 1.93L5.09499 1.3L8.00499 0L10.905 1.3L12.32 1.925L12.33 1.935L15.515 3.355Z" fill="#04D0FF"></path>
+                                       <path d="M14.845 6.63501V7.70501L8 10.735V9.61501L14.845 6.63501Z" fill="#0269D4"></path>
+                                    </g>
+                                    <defs>
+                                       <clipPath id="clip0_301_17810">
+                                          <rect width="16" height="16" fill="white"></rect>
+                                       </clipPath>
+                                    </defs>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                     </span>
+                     <span data-v-b433ad78="" data-v-bb151e01="" class="chat-entry-username" data-chat-entry-user="giritis" data-chat-entry-user-id="2873175" style="color: rgb(211, 153, 255);">Giritis</span>
+                  </span>
+                  <span class="font-bold text-white">: </span>
+                  <span data-v-89ba08de="">
+                     <div data-v-31c262c8="" data-v-89ba08de="" class="chat-emote-container">
+                        <div data-v-31c262c8="" class="relative"><img data-v-31c262c8="" data-emote-name="giritisawws" data-emote-id="1467652" src="https://files.kick.com/emotes/1467652/fullsize" alt="giritisawws" class="chat-emote"></div>
+                     </div>
+                  </span>
+                  <!---->
+               </div>
+               <!---->
+            </div>
+         </div>
+         <div data-v-5e52272e="" data-chat-entry="1690738628597067" class="mt-0.5">
+            <div class="chat-entry">
+               <!---->
+               <div>
+                  <div data-v-ff75f4fc="" class="inline-block text-xs font-semibold text-gray-400">10:37AM</div>
+                  <!----><span data-v-bb151e01="" class="chat-message-identity"><span data-v-bb151e01="" class="inline-flex translate-y-[3px]"></span><span data-v-b433ad78="" data-v-bb151e01="" class="chat-entry-username" data-chat-entry-user="reallylongusername" data-chat-entry-user-id="2272449" style="color: rgb(49, 214, 194);">reallylongusername</span></span><span class="font-bold text-white">: </span><span data-v-89ba08de=""><span data-v-89ba08de="" class="chat-entry-content">Hey everyone 💗😂</span></span><!---->
+               </div>
+               <!---->
+            </div>
+         </div>
+         <div data-v-5e52272e="" data-chat-entry="1690738633504420" class="mt-0.5">
+            <div class="chat-entry">
+               <!---->
+               <div>
+                  <div data-v-ff75f4fc="" class="inline-block text-xs font-semibold text-gray-400">10:37AM</div>
+                  <!---->
+                  <span data-v-bb151e01="" class="chat-message-identity">
+                     <span data-v-bb151e01="" class="inline-flex translate-y-[3px] mr-1">
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-8bcf93d3="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-8bcf93d3="" class="cls-2" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-4" points="10 6 8 8 8 9 10 9.03 10 18 14 18 14 6 10 6"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-1" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-3" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_301_17810)">
+                                       <path d="M7.99999 9.14999V6.62499L0.484985 3.35999V6.34499L1.15499 6.63499V12.73L7.99999 15.995V9.14999Z" fill="#0269D4"></path>
+                                       <path d="M8.00003 10.735V9.61501L1.15503 6.63501V7.70501L8.00003 10.735Z" fill="#0269D4"></path>
+                                       <path d="M15.515 3.355V6.345L14.85 6.64V12.73L12.705 13.755L11.185 14.48L8.00499 15.995V6.715L4.81999 5.295H4.81499L3.29499 4.61L0.484985 3.355L3.66999 1.935L3.67999 1.93L5.09499 1.3L8.00499 0L10.905 1.3L12.32 1.925L12.33 1.935L15.515 3.355Z" fill="#04D0FF"></path>
+                                       <path d="M14.845 6.63501V7.70501L8 10.735V9.61501L14.845 6.63501Z" fill="#0269D4"></path>
+                                    </g>
+                                    <defs>
+                                       <clipPath id="clip0_301_17810">
+                                          <rect width="16" height="16" fill="white"></rect>
+                                       </clipPath>
+                                    </defs>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge badge-tooltip ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-9200dfef="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-9200dfef="" class="cls-4" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-3" points="12 6 14.12 9.88 18 12 14.12 14.12 12 18 9.88 14.12 6 12 9.88 9.88 12 6"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-2" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-1" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                     </span>
+                     <span data-v-b433ad78="" data-v-bb151e01="" class="chat-entry-username" data-chat-entry-user="mythrii" data-chat-entry-user-id="7193072" style="color: rgb(255, 196, 102);">MythriI</span>
+                  </span>
+                  <span class="font-bold text-white">: </span><span data-v-89ba08de=""><span data-v-89ba08de="" class="chat-entry-content">Hello love</span></span><!---->
+               </div>
+               <!---->
+            </div>
+         </div>
+         <div data-v-5e52272e="" data-chat-entry="1690738640740600" class="mt-0.5">
+            <div class="chat-entry">
+               <!---->
+               <div>
+                  <div data-v-ff75f4fc="" class="inline-block text-xs font-semibold text-gray-400">10:37AM</div>
+                  <!---->
+                  <span data-v-bb151e01="" class="chat-message-identity">
+                     <span data-v-bb151e01="" class="inline-flex translate-y-[3px] mr-1">
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-8bcf93d3="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-8bcf93d3="" class="cls-2" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-4" points="10 6 8 8 8 9 10 9.03 10 18 14 18 14 6 10 6"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-1" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-3" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_301_17810)">
+                                       <path d="M7.99999 9.14999V6.62499L0.484985 3.35999V6.34499L1.15499 6.63499V12.73L7.99999 15.995V9.14999Z" fill="#0269D4"></path>
+                                       <path d="M8.00003 10.735V9.61501L1.15503 6.63501V7.70501L8.00003 10.735Z" fill="#0269D4"></path>
+                                       <path d="M15.515 3.355V6.345L14.85 6.64V12.73L12.705 13.755L11.185 14.48L8.00499 15.995V6.715L4.81999 5.295H4.81499L3.29499 4.61L0.484985 3.355L3.66999 1.935L3.67999 1.93L5.09499 1.3L8.00499 0L10.905 1.3L12.32 1.925L12.33 1.935L15.515 3.355Z" fill="#04D0FF"></path>
+                                       <path d="M14.845 6.63501V7.70501L8 10.735V9.61501L14.845 6.63501Z" fill="#0269D4"></path>
+                                    </g>
+                                    <defs>
+                                       <clipPath id="clip0_301_17810">
+                                          <rect width="16" height="16" fill="white"></rect>
+                                       </clipPath>
+                                    </defs>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                     </span>
+                     <span data-v-b433ad78="" data-v-bb151e01="" class="chat-entry-username" data-chat-entry-user="giritis" data-chat-entry-user-id="2873175" style="color: rgb(211, 153, 255);">Giritis</span>
+                  </span>
+                  <span class="font-bold text-white">: </span><span data-v-89ba08de=""><span data-v-89ba08de="" class="chat-entry-content">whats poppin?</span></span><!---->
+               </div>
+               <!---->
+            </div>
+         </div>
+         <div data-v-5e52272e="" data-chat-entry="1690738646810718" class="mt-0.5">
+            <div class="chat-entry">
+               <!---->
+               <div>
+                  <div data-v-ff75f4fc="" class="inline-block text-xs font-semibold text-gray-400">10:37AM</div>
+                  <!---->
+                  <span data-v-bb151e01="" class="chat-message-identity">
+                     <span data-v-bb151e01="" class="inline-flex translate-y-[3px] mr-1">
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-8bcf93d3="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-8bcf93d3="" class="cls-2" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-4" points="10 6 8 8 8 9 10 9.03 10 18 14 18 14 6 10 6"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-1" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-3" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_301_17810)">
+                                       <path d="M7.99999 9.14999V6.62499L0.484985 3.35999V6.34499L1.15499 6.63499V12.73L7.99999 15.995V9.14999Z" fill="#0269D4"></path>
+                                       <path d="M8.00003 10.735V9.61501L1.15503 6.63501V7.70501L8.00003 10.735Z" fill="#0269D4"></path>
+                                       <path d="M15.515 3.355V6.345L14.85 6.64V12.73L12.705 13.755L11.185 14.48L8.00499 15.995V6.715L4.81999 5.295H4.81499L3.29499 4.61L0.484985 3.355L3.66999 1.935L3.67999 1.93L5.09499 1.3L8.00499 0L10.905 1.3L12.32 1.925L12.33 1.935L15.515 3.355Z" fill="#04D0FF"></path>
+                                       <path d="M14.845 6.63501V7.70501L8 10.735V9.61501L14.845 6.63501Z" fill="#0269D4"></path>
+                                    </g>
+                                    <defs>
+                                       <clipPath id="clip0_301_17810">
+                                          <rect width="16" height="16" fill="white"></rect>
+                                       </clipPath>
+                                    </defs>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge badge-tooltip ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-9200dfef="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-9200dfef="" class="cls-4" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-3" points="12 6 14.12 9.88 18 12 14.12 14.12 12 18 9.88 14.12 6 12 9.88 9.88 12 6"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-2" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-1" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                     </span>
+                     <span data-v-b433ad78="" data-v-bb151e01="" class="chat-entry-username" data-chat-entry-user="mythrii" data-chat-entry-user-id="7193072" style="color: rgb(255, 196, 102);">MythriI</span>
+                  </span>
+                  <span class="font-bold text-white">: </span><span data-v-89ba08de=""><span data-v-89ba08de="" class="chat-entry-content">im lurking playing overwatch</span></span><!---->
+               </div>
+               <!---->
+            </div>
+         </div>
+         <div data-v-5e52272e="" data-chat-entry="1690738657553192" class="mt-0.5">
+            <div class="chat-entry">
+               <!---->
+               <div>
+                  <div data-v-ff75f4fc="" class="inline-block text-xs font-semibold text-gray-400">10:37AM</div>
+                  <!---->
+                  <span data-v-bb151e01="" class="chat-message-identity">
+                     <span data-v-bb151e01="" class="inline-flex translate-y-[3px] mr-1">
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-8bcf93d3="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-8bcf93d3="" class="cls-2" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-4" points="10 6 8 8 8 9 10 9.03 10 18 14 18 14 6 10 6"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-1" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-3" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_301_17810)">
+                                       <path d="M7.99999 9.14999V6.62499L0.484985 3.35999V6.34499L1.15499 6.63499V12.73L7.99999 15.995V9.14999Z" fill="#0269D4"></path>
+                                       <path d="M8.00003 10.735V9.61501L1.15503 6.63501V7.70501L8.00003 10.735Z" fill="#0269D4"></path>
+                                       <path d="M15.515 3.355V6.345L14.85 6.64V12.73L12.705 13.755L11.185 14.48L8.00499 15.995V6.715L4.81999 5.295H4.81499L3.29499 4.61L0.484985 3.355L3.66999 1.935L3.67999 1.93L5.09499 1.3L8.00499 0L10.905 1.3L12.32 1.925L12.33 1.935L15.515 3.355Z" fill="#04D0FF"></path>
+                                       <path d="M14.845 6.63501V7.70501L8 10.735V9.61501L14.845 6.63501Z" fill="#0269D4"></path>
+                                    </g>
+                                    <defs>
+                                       <clipPath id="clip0_301_17810">
+                                          <rect width="16" height="16" fill="white"></rect>
+                                       </clipPath>
+                                    </defs>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge badge-tooltip ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-9200dfef="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-9200dfef="" class="cls-4" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-3" points="12 6 14.12 9.88 18 12 14.12 14.12 12 18 9.88 14.12 6 12 9.88 9.88 12 6"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-2" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-1" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                     </span>
+                     <span data-v-b433ad78="" data-v-bb151e01="" class="chat-entry-username" data-chat-entry-user="mythrii" data-chat-entry-user-id="7193072" style="color: rgb(255, 196, 102);">MythriI</span>
+                  </span>
+                  <span class="font-bold text-white">: </span><span data-v-89ba08de=""><span data-v-89ba08de="" class="chat-entry-content">and twittering</span></span><!---->
+               </div>
+               <!---->
+            </div>
+         </div>
+         <div data-v-5e52272e="" data-chat-entry="1690738666444043" class="mt-0.5">
+            <div class="chat-entry">
+               <!---->
+               <div>
+                  <div data-v-ff75f4fc="" class="inline-block text-xs font-semibold text-gray-400">10:37AM</div>
+                  <!---->
+                  <span data-v-bb151e01="" class="chat-message-identity">
+                     <span data-v-bb151e01="" class="inline-flex translate-y-[3px] mr-1">
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-8bcf93d3="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-8bcf93d3="" class="cls-2" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-4" points="10 6 8 8 8 9 10 9.03 10 18 14 18 14 6 10 6"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-1" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-3" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_301_17810)">
+                                       <path d="M7.99999 9.14999V6.62499L0.484985 3.35999V6.34499L1.15499 6.63499V12.73L7.99999 15.995V9.14999Z" fill="#0269D4"></path>
+                                       <path d="M8.00003 10.735V9.61501L1.15503 6.63501V7.70501L8.00003 10.735Z" fill="#0269D4"></path>
+                                       <path d="M15.515 3.355V6.345L14.85 6.64V12.73L12.705 13.755L11.185 14.48L8.00499 15.995V6.715L4.81999 5.295H4.81499L3.29499 4.61L0.484985 3.355L3.66999 1.935L3.67999 1.93L5.09499 1.3L8.00499 0L10.905 1.3L12.32 1.925L12.33 1.935L15.515 3.355Z" fill="#04D0FF"></path>
+                                       <path d="M14.845 6.63501V7.70501L8 10.735V9.61501L14.845 6.63501Z" fill="#0269D4"></path>
+                                    </g>
+                                    <defs>
+                                       <clipPath id="clip0_301_17810">
+                                          <rect width="16" height="16" fill="white"></rect>
+                                       </clipPath>
+                                    </defs>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                     </span>
+                     <span data-v-b433ad78="" data-v-bb151e01="" class="chat-entry-username" data-chat-entry-user="giritis" data-chat-entry-user-id="2873175" style="color: rgb(211, 153, 255);">Giritis</span>
+                  </span>
+                  <span class="font-bold text-white">: </span><span data-v-89ba08de=""><span data-v-89ba08de="" class="chat-entry-content">im twearking :D</span></span><!---->
+               </div>
+               <!---->
+            </div>
+         </div>
+         <div data-v-5e52272e="" data-chat-entry="1690738668645608" class="mt-0.5">
+            <div class="chat-entry">
+               <!---->
+               <div>
+                  <div data-v-ff75f4fc="" class="inline-block text-xs font-semibold text-gray-400">10:37AM</div>
+                  <!----><span data-v-bb151e01="" class="chat-message-identity"><span data-v-bb151e01="" class="inline-flex translate-y-[3px]"></span><span data-v-b433ad78="" data-v-bb151e01="" class="chat-entry-username" data-chat-entry-user="reallylongusername" data-chat-entry-user-id="2272449" style="color: rgb(49, 214, 194);">reallylongusername</span></span><span class="font-bold text-white">: </span><span data-v-89ba08de=""><span data-v-89ba08de="" class="chat-entry-content">integer quis auctor elit sed. Tincidunt ornare massa eget egestas purus viverra. Ut etiam sit amet nisl purus in mollis nunc sed.</span></span><!---->
+               </div>
+               <!---->
+            </div>
+         </div>
+         <div data-v-5e52272e="" data-chat-entry="1690738673738567" class="mt-0.5">
+            <div class="chat-entry">
+               <!---->
+               <div>
+                  <div data-v-ff75f4fc="" class="inline-block text-xs font-semibold text-gray-400">10:37AM</div>
+                  <!---->
+                  <span data-v-bb151e01="" class="chat-message-identity">
+                     <span data-v-bb151e01="" class="inline-flex translate-y-[3px] mr-1">
+                        
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-11d1cc91="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon class="cls-2" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17" data-v-11d1cc91=""></polygon>
+                                    <polygon class="cls-1" points="7 4 4 7 4 9 9 4 7 4" data-v-11d1cc91=""></polygon>
+                                    <polygon class="cls-3" points="14 15 10 15 9 14 9 7 10 6 14 6 15 7 15 14 14 15" data-v-11d1cc91=""></polygon>
+                                    <polygon class="cls-3" points="16 12 16 15 15 16 9 16 8 15 8 12 7 12 7 16 8 17 16 17 17 16 17 12 16 12" data-v-11d1cc91=""></polygon>
+                                    <rect class="cls-3" x="11" y="17" width="2" height="1" data-v-11d1cc91=""></rect>
+                                    <polygon class="cls-4" points="22 17 20 16 16 20 17 22 22 17" data-v-11d1cc91=""></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true"><button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true"><div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;"><svg data-v-ff0bb21a="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><polygon class="cls-1" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17" data-v-ff0bb21a=""></polygon><polygon class="cls-2" points="7 4 4 7 4 9 9 4 7 4" data-v-ff0bb21a=""></polygon><polygon class="cls-3" points="22 17 20 16 16 20 17 22 22 17" data-v-ff0bb21a=""></polygon><polygon class="cls-4" points="7.5 7 5.5 9 5.5 15 7.5 17 9.5 17 11.5 15 11.5 9 9.5 7 7.5 7" data-v-ff0bb21a=""></polygon><rect class="cls-1" x="7.5" y="9" width="2" height="6" data-v-ff0bb21a=""></rect><polygon class="cls-4" points="14.5 7 12.5 9 12.5 15 14.5 17 16.5 17 18.5 15 18.5 9 16.5 7 14.5 7" data-v-ff0bb21a=""></polygon><rect class="cls-1" x="14.5" y="9" width="2" height="6" data-v-ff0bb21a=""></rect><rect class="cls-1" x="15.5" y="10" width="3" height="1" data-v-ff0bb21a=""></rect><polygon class="cls-4" points="15.5 11 16.5 11 17 12 16.5 13 15.5 13 15.5 11" data-v-ff0bb21a=""></polygon></svg></div></button></div>
+
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true"><button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true"><div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;"><svg data-v-592f5460="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><polygon class="cls-2" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17" data-v-592f5460=""></polygon><polygon class="cls-4" points="17.83 10.5 16.17 8 7.83 8 6.17 10.5 9.5 10.5 17.83 10.5" data-v-592f5460=""></polygon><polygon class="cls-4" points="10.16 11.33 12 18 13.84 11.33 10.16 11.33" data-v-592f5460=""></polygon><polygon class="cls-4" points="6.81 11.33 10.63 16.95 9.3 11.33 6.81 11.33" data-v-592f5460=""></polygon><polygon class="cls-4" points="13.37 16.95 17.19 11.33 14.7 11.33 13.37 16.95" data-v-592f5460=""></polygon><polygon class="cls-1" points="7 4 4 7 4 9 9 4 7 4" data-v-592f5460=""></polygon><polygon class="cls-3" points="22 17 20 16 16 20 17 22 22 17" data-v-592f5460=""></polygon></svg></div></button></div>
+
+                     </span>
+                     <span data-v-b433ad78="" data-v-bb151e01="" class="chat-entry-username" data-chat-entry-user="nerdyrapture" data-chat-entry-user-id="1800144" style="color: rgb(255, 157, 0);">NerdyRapture</span>
+                  </span>
+                  <span class="font-bold text-white">: </span>
+                  <span data-v-89ba08de="">
+                     <div data-v-31c262c8="" data-v-89ba08de="" class="chat-emote-container">
+                        <div data-v-31c262c8="" class="relative"><img data-v-31c262c8="" data-emote-name="nerdyraptureyeye" data-emote-id="1498778" src="https://files.kick.com/emotes/1498778/fullsize" alt="nerdyraptureyeye" class="chat-emote"></div>
+                     </div>
+                  </span>
+                  <!---->
+               </div>
+               <!---->
+            </div>
+         </div>
+         <div data-v-5e52272e="" data-chat-entry="1690738682724865" class="mt-0.5">
+            <div class="chat-entry">
+               <!---->
+               <div>
+                  <div data-v-ff75f4fc="" class="inline-block text-xs font-semibold text-gray-400">10:38AM</div>
+                  <!---->
+                  <span data-v-bb151e01="" class="chat-message-identity">
+                     <span data-v-bb151e01="" class="inline-flex translate-y-[3px] mr-1">
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-8bcf93d3="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-8bcf93d3="" class="cls-2" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-4" points="10 6 8 8 8 9 10 9.03 10 18 14 18 14 6 10 6"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-1" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-3" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_301_17810)">
+                                       <path d="M7.99999 9.14999V6.62499L0.484985 3.35999V6.34499L1.15499 6.63499V12.73L7.99999 15.995V9.14999Z" fill="#0269D4"></path>
+                                       <path d="M8.00003 10.735V9.61501L1.15503 6.63501V7.70501L8.00003 10.735Z" fill="#0269D4"></path>
+                                       <path d="M15.515 3.355V6.345L14.85 6.64V12.73L12.705 13.755L11.185 14.48L8.00499 15.995V6.715L4.81999 5.295H4.81499L3.29499 4.61L0.484985 3.355L3.66999 1.935L3.67999 1.93L5.09499 1.3L8.00499 0L10.905 1.3L12.32 1.925L12.33 1.935L15.515 3.355Z" fill="#04D0FF"></path>
+                                       <path d="M14.845 6.63501V7.70501L8 10.735V9.61501L14.845 6.63501Z" fill="#0269D4"></path>
+                                    </g>
+                                    <defs>
+                                       <clipPath id="clip0_301_17810">
+                                          <rect width="16" height="16" fill="white"></rect>
+                                       </clipPath>
+                                    </defs>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                     </span>
+                     <span data-v-b433ad78="" data-v-bb151e01="" class="chat-entry-username" data-chat-entry-user="giritis" data-chat-entry-user-id="2873175" style="color: rgb(211, 153, 255);">Giritis</span>
+                  </span>
+                  <span class="font-bold text-white">: </span><span data-v-89ba08de=""><span data-v-89ba08de="" class="chat-entry-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></span>
+                  <!---->
+               </div>
+               <!---->
+            </div>
+         </div>
+         <div data-v-5e52272e="" data-chat-entry="1690738683825088" class="mt-0.5">
+            <div class="chat-entry">
+               <!---->
+               <div>
+                  <div data-v-ff75f4fc="" class="inline-block text-xs font-semibold text-gray-400">10:38AM</div>
+                  <!---->
+                  <span data-v-bb151e01="" class="chat-message-identity">
+                     <span data-v-bb151e01="" class="inline-flex translate-y-[3px] mr-1">
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-8bcf93d3="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-8bcf93d3="" class="cls-2" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-4" points="10 6 8 8 8 9 10 9.03 10 18 14 18 14 6 10 6"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-1" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-3" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_301_17810)">
+                                       <path d="M7.99999 9.14999V6.62499L0.484985 3.35999V6.34499L1.15499 6.63499V12.73L7.99999 15.995V9.14999Z" fill="#0269D4"></path>
+                                       <path d="M8.00003 10.735V9.61501L1.15503 6.63501V7.70501L8.00003 10.735Z" fill="#0269D4"></path>
+                                       <path d="M15.515 3.355V6.345L14.85 6.64V12.73L12.705 13.755L11.185 14.48L8.00499 15.995V6.715L4.81999 5.295H4.81499L3.29499 4.61L0.484985 3.355L3.66999 1.935L3.67999 1.93L5.09499 1.3L8.00499 0L10.905 1.3L12.32 1.925L12.33 1.935L15.515 3.355Z" fill="#04D0FF"></path>
+                                       <path d="M14.845 6.63501V7.70501L8 10.735V9.61501L14.845 6.63501Z" fill="#0269D4"></path>
+                                    </g>
+                                    <defs>
+                                       <clipPath id="clip0_301_17810">
+                                          <rect width="16" height="16" fill="white"></rect>
+                                       </clipPath>
+                                    </defs>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                     </span>
+                     <span data-v-b433ad78="" data-v-bb151e01="" class="chat-entry-username" data-chat-entry-user="giritis" data-chat-entry-user-id="2873175" style="color: rgb(211, 153, 255);">Giritis</span>
+                  </span>
+                  <span class="font-bold text-white">: </span><span data-v-89ba08de=""><span data-v-89ba08de="" class="chat-entry-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mauris sit amet massa vitae tortor. Libero volutpat sed cras. Libero volutpat sed cras.</span></span>
+                  <!---->
+               </div>
+               <!---->
+            </div>
+         </div>
+         <div data-v-5e52272e="" data-chat-entry="1690738687744545" class="mt-0.5">
+            <div class="chat-entry">
+               <!---->
+               <div>
+                  <div data-v-ff75f4fc="" class="inline-block text-xs font-semibold text-gray-400">10:38AM</div>
+                  <!---->
+                  <span data-v-bb151e01="" class="chat-message-identity">
+                     <span data-v-bb151e01="" class="inline-flex translate-y-[3px] mr-1">
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-8bcf93d3="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-8bcf93d3="" class="cls-2" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-4" points="10 6 8 8 8 9 10 9.03 10 18 14 18 14 6 10 6"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-1" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-3" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_301_17810)">
+                                       <path d="M7.99999 9.14999V6.62499L0.484985 3.35999V6.34499L1.15499 6.63499V12.73L7.99999 15.995V9.14999Z" fill="#0269D4"></path>
+                                       <path d="M8.00003 10.735V9.61501L1.15503 6.63501V7.70501L8.00003 10.735Z" fill="#0269D4"></path>
+                                       <path d="M15.515 3.355V6.345L14.85 6.64V12.73L12.705 13.755L11.185 14.48L8.00499 15.995V6.715L4.81999 5.295H4.81499L3.29499 4.61L0.484985 3.355L3.66999 1.935L3.67999 1.93L5.09499 1.3L8.00499 0L10.905 1.3L12.32 1.925L12.33 1.935L15.515 3.355Z" fill="#04D0FF"></path>
+                                       <path d="M14.845 6.63501V7.70501L8 10.735V9.61501L14.845 6.63501Z" fill="#0269D4"></path>
+                                    </g>
+                                    <defs>
+                                       <clipPath id="clip0_301_17810">
+                                          <rect width="16" height="16" fill="white"></rect>
+                                       </clipPath>
+                                    </defs>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge badge-tooltip ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-9200dfef="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-9200dfef="" class="cls-4" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-3" points="12 6 14.12 9.88 18 12 14.12 14.12 12 18 9.88 14.12 6 12 9.88 9.88 12 6"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-2" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-1" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                     </span>
+                     <span data-v-b433ad78="" data-v-bb151e01="" class="chat-entry-username" data-chat-entry-user="mythrii" data-chat-entry-user-id="7193072" style="color: rgb(255, 196, 102);">MythriI</span>
+                  </span>
+                  <span class="font-bold text-white">: </span>
+                  <span data-v-89ba08de="">
+                     <div data-v-31c262c8="" data-v-89ba08de="" class="chat-emote-container">
+                        <div data-v-31c262c8="" class="relative"><img data-v-31c262c8="" data-emote-name="DanceDance" data-emote-id="39260" src="https://files.kick.com/emotes/39260/fullsize" alt="DanceDance" class="chat-emote"></div>
+                     </div>
+                  </span>
+                  <!---->
+               </div>
+               <!---->
+            </div>
+         </div>
+         <div data-v-5e52272e="" data-chat-entry="1690738696228575" class="mt-0.5">
+            <div class="chat-entry">
+               <!---->
+               <div>
+                  <div data-v-ff75f4fc="" class="inline-block text-xs font-semibold text-gray-400">10:38AM</div>
+                  <span data-v-bb151e01="" class="chat-message-identity"><span data-v-bb151e01="" class="inline-flex translate-y-[3px]"></span><span data-v-b433ad78="" data-v-bb151e01="" class="chat-entry-username" data-chat-entry-user="tonyxgaming" data-chat-entry-user-id="11996338" style="color: rgb(222, 178, 255);">TONYXGAMING</span></span><span class="font-bold text-white">: </span><span data-v-89ba08de=""><span data-v-89ba08de="" class="chat-entry-content">Hi</span></span>
+               </div>
+               <!---->
+            </div>
+         </div>
+         <div data-v-5e52272e="" data-chat-entry="1690738709979678" class="mt-0.5">
+            <div class="chat-entry">
+               <!---->
+               <div>
+                  <div data-v-ff75f4fc="" class="inline-block text-xs font-semibold text-gray-400">10:38AM</div>
+                  <!---->
+                  <span data-v-bb151e01="" class="chat-message-identity">
+                     <span data-v-bb151e01="" class="inline-flex translate-y-[3px] mr-1">
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-8bcf93d3="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-8bcf93d3="" class="cls-2" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-4" points="10 6 8 8 8 9 10 9.03 10 18 14 18 14 6 10 6"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-1" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-3" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_301_17810)">
+                                       <path d="M7.99999 9.14999V6.62499L0.484985 3.35999V6.34499L1.15499 6.63499V12.73L7.99999 15.995V9.14999Z" fill="#0269D4"></path>
+                                       <path d="M8.00003 10.735V9.61501L1.15503 6.63501V7.70501L8.00003 10.735Z" fill="#0269D4"></path>
+                                       <path d="M15.515 3.355V6.345L14.85 6.64V12.73L12.705 13.755L11.185 14.48L8.00499 15.995V6.715L4.81999 5.295H4.81499L3.29499 4.61L0.484985 3.355L3.66999 1.935L3.67999 1.93L5.09499 1.3L8.00499 0L10.905 1.3L12.32 1.925L12.33 1.935L15.515 3.355Z" fill="#04D0FF"></path>
+                                       <path d="M14.845 6.63501V7.70501L8 10.735V9.61501L14.845 6.63501Z" fill="#0269D4"></path>
+                                    </g>
+                                    <defs>
+                                       <clipPath id="clip0_301_17810">
+                                          <rect width="16" height="16" fill="white"></rect>
+                                       </clipPath>
+                                    </defs>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                     </span>
+                     <span data-v-b433ad78="" data-v-bb151e01="" class="chat-entry-username" data-chat-entry-user="giritis" data-chat-entry-user-id="2873175" style="color: rgb(211, 153, 255);">Giritis</span>
+                  </span>
+                  <span class="font-bold text-white">: </span><span data-v-89ba08de=""><span data-v-89ba08de="" class="chat-entry-content">Bruh :D</span></span><!---->
+               </div>
+               <!---->
+            </div>
+         </div>
+         <div data-v-5e52272e="" data-chat-entry="1690738716660975" class="mt-0.5">
+            <div class="chat-entry">
+               <!---->
+               <div>
+                  <div data-v-ff75f4fc="" class="inline-block text-xs font-semibold text-gray-400">10:38AM</div>
+                  <!---->
+                  <span data-v-bb151e01="" class="chat-message-identity">
+                     <span data-v-bb151e01="" class="inline-flex translate-y-[3px] mr-1">
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-8bcf93d3="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-8bcf93d3="" class="cls-2" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-4" points="10 6 8 8 8 9 10 9.03 10 18 14 18 14 6 10 6"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-1" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-3" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_301_17810)">
+                                       <path d="M7.99999 9.14999V6.62499L0.484985 3.35999V6.34499L1.15499 6.63499V12.73L7.99999 15.995V9.14999Z" fill="#0269D4"></path>
+                                       <path d="M8.00003 10.735V9.61501L1.15503 6.63501V7.70501L8.00003 10.735Z" fill="#0269D4"></path>
+                                       <path d="M15.515 3.355V6.345L14.85 6.64V12.73L12.705 13.755L11.185 14.48L8.00499 15.995V6.715L4.81999 5.295H4.81499L3.29499 4.61L0.484985 3.355L3.66999 1.935L3.67999 1.93L5.09499 1.3L8.00499 0L10.905 1.3L12.32 1.925L12.33 1.935L15.515 3.355Z" fill="#04D0FF"></path>
+                                       <path d="M14.845 6.63501V7.70501L8 10.735V9.61501L14.845 6.63501Z" fill="#0269D4"></path>
+                                    </g>
+                                    <defs>
+                                       <clipPath id="clip0_301_17810">
+                                          <rect width="16" height="16" fill="white"></rect>
+                                       </clipPath>
+                                    </defs>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge badge-tooltip ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-9200dfef="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-9200dfef="" class="cls-4" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-3" points="12 6 14.12 9.88 18 12 14.12 14.12 12 18 9.88 14.12 6 12 9.88 9.88 12 6"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-2" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-1" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                     </span>
+                     <span data-v-b433ad78="" data-v-bb151e01="" class="chat-entry-username" data-chat-entry-user="mythrii" data-chat-entry-user-id="7193072" style="color: rgb(255, 196, 102);">MythriI</span>
+                  </span>
+                  <span class="font-bold text-white">: </span>
+                  <span data-v-89ba08de="">
+                     <div data-v-31c262c8="" data-v-89ba08de="" class="chat-emote-container">
+                        <div data-v-31c262c8="" class="relative"><img data-v-31c262c8="" data-emote-name="DanceDance" data-emote-id="39260" src="https://files.kick.com/emotes/39260/fullsize" alt="DanceDance" class="chat-emote"></div>
+                     </div>
+                  </span>
+                  <!---->
+               </div>
+               <!---->
+            </div>
+         </div>
+         <div data-v-5e52272e="" data-chat-entry="1690738726438150" class="mt-0.5">
+            <div class="chat-entry">
+               <!---->
+               <div>
+                  <div data-v-ff75f4fc="" class="inline-block text-xs font-semibold text-gray-400">10:38AM</div>
+                  <!---->
+                  <span data-v-bb151e01="" class="chat-message-identity">
+                     <span data-v-bb151e01="" class="inline-flex translate-y-[3px] mr-1">
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-8bcf93d3="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-8bcf93d3="" class="cls-2" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-4" points="10 6 8 8 8 9 10 9.03 10 18 14 18 14 6 10 6"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-1" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-3" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0" active="true">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0" active="true">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_301_17810)">
+                                       <path d="M7.99999 9.14999V6.62499L0.484985 3.35999V6.34499L1.15499 6.63499V12.73L7.99999 15.995V9.14999Z" fill="#0269D4"></path>
+                                       <path d="M8.00003 10.735V9.61501L1.15503 6.63501V7.70501L8.00003 10.735Z" fill="#0269D4"></path>
+                                       <path d="M15.515 3.355V6.345L14.85 6.64V12.73L12.705 13.755L11.185 14.48L8.00499 15.995V6.715L4.81999 5.295H4.81499L3.29499 4.61L0.484985 3.355L3.66999 1.935L3.67999 1.93L5.09499 1.3L8.00499 0L10.905 1.3L12.32 1.925L12.33 1.935L15.515 3.355Z" fill="#04D0FF"></path>
+                                       <path d="M14.845 6.63501V7.70501L8 10.735V9.61501L14.845 6.63501Z" fill="#0269D4"></path>
+                                    </g>
+                                    <defs>
+                                       <clipPath id="clip0_301_17810">
+                                          <rect width="16" height="16" fill="white"></rect>
+                                       </clipPath>
+                                    </defs>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                     </span>
+                     <span data-v-b433ad78="" data-v-bb151e01="" class="chat-entry-username" data-chat-entry-user="giritis" data-chat-entry-user-id="2873175" style="color: rgb(211, 153, 255);">Giritis</span>
+                  </span>
+                  <span class="font-bold text-white">: </span><span data-v-89ba08de=""><span data-v-89ba08de="" class="chat-entry-content">Libero volutpat sed cras</span></span><!---->
+               </div>
+               <!---->
+            </div>
+         </div>
+         <div data-v-5e52272e="" data-chat-entry="history_breaker" class="mt-0.5">
+            <div data-v-ccc533d9="" class="chatroom-history-breaker">
+               <div data-v-ccc533d9=""></div>
+               <span data-v-ccc533d9="">New messages</span>
+               <div data-v-ccc533d9=""></div>
+            </div>
+         </div>
+         <div data-v-5e52272e="" data-chat-entry="dfa9fa89-70e9-42f7-af2d-b1f9222e70f2" class="mt-0.5">
+            <div class="chat-entry">
+               <!---->
+               <div>
+                  <div data-v-ff75f4fc="" class="inline-block text-xs font-semibold text-gray-400">10:39AM</div>
+                  <!---->
+                  <span data-v-bb151e01="" class="chat-message-identity">
+                     <span data-v-bb151e01="" class="inline-flex translate-y-[3px] mr-1">
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-09641b1e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-09641b1e="" class="cls-4" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-09641b1e="" class="cls-3" points="10.34 17.25 6.44 13.35 8.24 11.56 10.34 13.67 16.21 7.81 18 9.6 10.34 17.25"></polygon>
+                                    <polygon data-v-09641b1e="" class="cls-2" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-09641b1e="" class="cls-1" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-8bcf93d3="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-8bcf93d3="" class="cls-2" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-4" points="10 6 8 8 8 9 10 9.03 10 18 14 18 14 6 10 6"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-1" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-3" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_301_17810)">
+                                       <path d="M7.99999 9.14999V6.62499L0.484985 3.35999V6.34499L1.15499 6.63499V12.73L7.99999 15.995V9.14999Z" fill="#0269D4"></path>
+                                       <path d="M8.00003 10.735V9.61501L1.15503 6.63501V7.70501L8.00003 10.735Z" fill="#0269D4"></path>
+                                       <path d="M15.515 3.355V6.345L14.85 6.64V12.73L12.705 13.755L11.185 14.48L8.00499 15.995V6.715L4.81999 5.295H4.81499L3.29499 4.61L0.484985 3.355L3.66999 1.935L3.67999 1.93L5.09499 1.3L8.00499 0L10.905 1.3L12.32 1.925L12.33 1.935L15.515 3.355Z" fill="#04D0FF"></path>
+                                       <path d="M14.845 6.63501V7.70501L8 10.735V9.61501L14.845 6.63501Z" fill="#0269D4"></path>
+                                    </g>
+                                    <defs>
+                                       <clipPath id="clip0_301_17810">
+                                          <rect width="16" height="16" fill="white"></rect>
+                                       </clipPath>
+                                    </defs>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                     </span>
+                     <span data-v-b433ad78="" data-v-bb151e01="" class="chat-entry-username" data-chat-entry-user="giritis" data-chat-entry-user-id="2873175" style="color: rgb(211, 153, 255);">Giritis</span>
+                  </span>
+                  <span class="font-bold text-white">: </span><span data-v-89ba08de=""><span data-v-89ba08de="" class="chat-entry-content">ornare arcu dui vivamus arcu felis. Id leo in vitae turpis massa sed. </span></span><!---->
+               </div>
+               <!---->
+            </div>
+         </div>
+         <div data-v-5e52272e="" data-chat-entry="5a077c14-f6e7-444e-94f4-89e530940e89" class="mt-0.5">
+            <div class="chat-entry">
+               <!---->
+               <div>
+                  <div data-v-ff75f4fc="" class="inline-block text-xs font-semibold text-gray-400">10:39AM</div>
+                  <!---->
+                  <span data-v-bb151e01="" class="chat-message-identity">
+                     <span data-v-bb151e01="" class="inline-flex translate-y-[3px] mr-1">
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-8bcf93d3="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-8bcf93d3="" class="cls-2" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-4" points="10 6 8 8 8 9 10 9.03 10 18 14 18 14 6 10 6"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-1" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-3" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_301_17810)">
+                                       <path d="M7.99999 9.14999V6.62499L0.484985 3.35999V6.34499L1.15499 6.63499V12.73L7.99999 15.995V9.14999Z" fill="#0269D4"></path>
+                                       <path d="M8.00003 10.735V9.61501L1.15503 6.63501V7.70501L8.00003 10.735Z" fill="#0269D4"></path>
+                                       <path d="M15.515 3.355V6.345L14.85 6.64V12.73L12.705 13.755L11.185 14.48L8.00499 15.995V6.715L4.81999 5.295H4.81499L3.29499 4.61L0.484985 3.355L3.66999 1.935L3.67999 1.93L5.09499 1.3L8.00499 0L10.905 1.3L12.32 1.925L12.33 1.935L15.515 3.355Z" fill="#04D0FF"></path>
+                                       <path d="M14.845 6.63501V7.70501L8 10.735V9.61501L14.845 6.63501Z" fill="#0269D4"></path>
+                                    </g>
+                                    <defs>
+                                       <clipPath id="clip0_301_17810">
+                                          <rect width="16" height="16" fill="white"></rect>
+                                       </clipPath>
+                                    </defs>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge badge-tooltip ml-1 first:ml-0">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-9200dfef="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-9200dfef="" class="cls-4" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-3" points="12 6 14.12 9.88 18 12 14.12 14.12 12 18 9.88 14.12 6 12 9.88 9.88 12 6"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-2" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-1" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                     </span>
+                     <span data-v-b433ad78="" data-v-bb151e01="" class="chat-entry-username" data-chat-entry-user="mythrii" data-chat-entry-user-id="7193072" style="color: rgb(255, 196, 102);">MythriI</span>
+                  </span>
+                  <span class="font-bold text-white">: </span>
+                  <span data-v-89ba08de="">
+                     <div data-v-31c262c8="" data-v-89ba08de="" class="chat-emote-container">
+                        <div data-v-31c262c8="" class="relative"><img data-v-31c262c8="" data-emote-name="beeBobble" data-emote-id="39251" src="https://files.kick.com/emotes/39251/fullsize" alt="beeBobble" class="chat-emote"></div>
+                     </div>
+                  </span>
+                  <!---->
+               </div>
+               <!---->
+            </div>
+         </div>
+         <div data-v-5e52272e="" data-chat-entry="c0f21b53-bc3e-4af4-a7c3-b33aee3d16a2" class="mt-0.5">
+            <div class="chat-entry">
+               <!---->
+               <div>
+                  <div data-v-ff75f4fc="" class="inline-block text-xs font-semibold text-gray-400">10:39AM</div>
+                  <!---->
+                  <span data-v-bb151e01="" class="chat-message-identity">
+                     <span data-v-bb151e01="" class="inline-flex translate-y-[3px] mr-1">
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-09641b1e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-09641b1e="" class="cls-4" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-09641b1e="" class="cls-3" points="10.34 17.25 6.44 13.35 8.24 11.56 10.34 13.67 16.21 7.81 18 9.6 10.34 17.25"></polygon>
+                                    <polygon data-v-09641b1e="" class="cls-2" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-09641b1e="" class="cls-1" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-8bcf93d3="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-8bcf93d3="" class="cls-2" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-4" points="10 6 8 8 8 9 10 9.03 10 18 14 18 14 6 10 6"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-1" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-3" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_301_17810)">
+                                       <path d="M7.99999 9.14999V6.62499L0.484985 3.35999V6.34499L1.15499 6.63499V12.73L7.99999 15.995V9.14999Z" fill="#0269D4"></path>
+                                       <path d="M8.00003 10.735V9.61501L1.15503 6.63501V7.70501L8.00003 10.735Z" fill="#0269D4"></path>
+                                       <path d="M15.515 3.355V6.345L14.85 6.64V12.73L12.705 13.755L11.185 14.48L8.00499 15.995V6.715L4.81999 5.295H4.81499L3.29499 4.61L0.484985 3.355L3.66999 1.935L3.67999 1.93L5.09499 1.3L8.00499 0L10.905 1.3L12.32 1.925L12.33 1.935L15.515 3.355Z" fill="#04D0FF"></path>
+                                       <path d="M14.845 6.63501V7.70501L8 10.735V9.61501L14.845 6.63501Z" fill="#0269D4"></path>
+                                    </g>
+                                    <defs>
+                                       <clipPath id="clip0_301_17810">
+                                          <rect width="16" height="16" fill="white"></rect>
+                                       </clipPath>
+                                    </defs>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                     </span>
+                     <span data-v-b433ad78="" data-v-bb151e01="" class="chat-entry-username" data-chat-entry-user="giritis" data-chat-entry-user-id="2873175" style="color: rgb(211, 153, 255);">Giritis</span>
+                  </span>
+                  <span class="font-bold text-white">: </span><span data-v-89ba08de=""><span data-v-89ba08de="" class="chat-entry-content">💗</span></span><!---->
+               </div>
+               <!---->
+            </div>
+         </div>
+         <div data-v-5e52272e="" data-chat-entry="4ce0b05b-f10e-4117-9f85-7313a3cddf63" class="mt-0.5">
+            <div class="chat-entry">
+               <!---->
+               <div>
+                  <div data-v-ff75f4fc="" class="inline-block text-xs font-semibold text-gray-400">10:39AM</div>
+                  <!---->
+                  <span data-v-bb151e01="" class="chat-message-identity">
+                     <span data-v-bb151e01="" class="inline-flex translate-y-[3px] mr-1">
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-8bcf93d3="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-8bcf93d3="" class="cls-2" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-4" points="10 6 8 8 8 9 10 9.03 10 18 14 18 14 6 10 6"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-1" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-3" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_301_17810)">
+                                       <path d="M7.99999 9.14999V6.62499L0.484985 3.35999V6.34499L1.15499 6.63499V12.73L7.99999 15.995V9.14999Z" fill="#0269D4"></path>
+                                       <path d="M8.00003 10.735V9.61501L1.15503 6.63501V7.70501L8.00003 10.735Z" fill="#0269D4"></path>
+                                       <path d="M15.515 3.355V6.345L14.85 6.64V12.73L12.705 13.755L11.185 14.48L8.00499 15.995V6.715L4.81999 5.295H4.81499L3.29499 4.61L0.484985 3.355L3.66999 1.935L3.67999 1.93L5.09499 1.3L8.00499 0L10.905 1.3L12.32 1.925L12.33 1.935L15.515 3.355Z" fill="#04D0FF"></path>
+                                       <path d="M14.845 6.63501V7.70501L8 10.735V9.61501L14.845 6.63501Z" fill="#0269D4"></path>
+                                    </g>
+                                    <defs>
+                                       <clipPath id="clip0_301_17810">
+                                          <rect width="16" height="16" fill="white"></rect>
+                                       </clipPath>
+                                    </defs>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge badge-tooltip ml-1 first:ml-0">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-9200dfef="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-9200dfef="" class="cls-4" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-3" points="12 6 14.12 9.88 18 12 14.12 14.12 12 18 9.88 14.12 6 12 9.88 9.88 12 6"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-2" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-1" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                     </span>
+                     <span data-v-b433ad78="" data-v-bb151e01="" class="chat-entry-username" data-chat-entry-user="mythrii" data-chat-entry-user-id="7193072" style="color: rgb(255, 196, 102);">MythriI</span>
+                  </span>
+                  <span class="font-bold text-white">: </span><span data-v-89ba08de=""><span data-v-89ba08de="" class="chat-entry-content">tempus urna. Ac turpis egestas integer eget aliquet nibh praesent. Ultricies mi eget mauris pharetra. Mauris in aliquam sem fringilla ut.</span></span><!---->
+               </div>
+               <!---->
+            </div>
+         </div>
+
+         
+         <div data-v-5e52272e="" data-chat-entry="6d111301-c3a1-4c32-bcb5-fb37a09dd1ac" class="mt-0.5">
+            <div class="chat-entry">
+               <!---->
+               <div>
+                  <div data-v-ff75f4fc="" class="inline-block text-xs font-semibold text-gray-400">10:40AM</div>
+                  <!---->
+                  <span data-v-bb151e01="" class="chat-message-identity">
+                     <span data-v-bb151e01="" class="inline-flex translate-y-[3px] mr-1">
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-8bcf93d3="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-8bcf93d3="" class="cls-2" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-4" points="10 6 8 8 8 9 10 9.03 10 18 14 18 14 6 10 6"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-1" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-8bcf93d3="" class="cls-3" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge ml-1 first:ml-0">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_301_17810)">
+                                       <path d="M7.99999 9.14999V6.62499L0.484985 3.35999V6.34499L1.15499 6.63499V12.73L7.99999 15.995V9.14999Z" fill="#0269D4"></path>
+                                       <path d="M8.00003 10.735V9.61501L1.15503 6.63501V7.70501L8.00003 10.735Z" fill="#0269D4"></path>
+                                       <path d="M15.515 3.355V6.345L14.85 6.64V12.73L12.705 13.755L11.185 14.48L8.00499 15.995V6.715L4.81999 5.295H4.81499L3.29499 4.61L0.484985 3.355L3.66999 1.935L3.67999 1.93L5.09499 1.3L8.00499 0L10.905 1.3L12.32 1.925L12.33 1.935L15.515 3.355Z" fill="#04D0FF"></path>
+                                       <path d="M14.845 6.63501V7.70501L8 10.735V9.61501L14.845 6.63501Z" fill="#0269D4"></path>
+                                    </g>
+                                    <defs>
+                                       <clipPath id="clip0_301_17810">
+                                          <rect width="16" height="16" fill="white"></rect>
+                                       </clipPath>
+                                    </defs>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                        <div data-v-d0e46440="" class="relative badge-tooltip ml-1 first:ml-0">
+                           <button data-v-fa8cab30="" data-v-d0e46440="" type="button" class="base-badge badge-tooltip ml-1 first:ml-0">
+                              <div data-v-fa8cab30="" class="base-icon icon size-sm" style="width: 16px; height: 16px;">
+                                 <svg data-v-9200dfef="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                                    <polygon data-v-9200dfef="" class="cls-4" points="2 17 7 22 17 22 22 17 22 7 17 2 7 2 2 7 2 17"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-3" points="12 6 14.12 9.88 18 12 14.12 14.12 12 18 9.88 14.12 6 12 9.88 9.88 12 6"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-2" points="7 4 4 7 4 9 9 4 7 4"></polygon>
+                                    <polygon data-v-9200dfef="" class="cls-1" points="22 17 20 16 16 20 17 22 22 17"></polygon>
+                                 </svg>
+                              </div>
+                           </button>
+                        </div>
+                     </span>
+                     <span data-v-b433ad78="" data-v-bb151e01="" class="chat-entry-username" data-chat-entry-user="mythrii" data-chat-entry-user-id="7193072" style="color: rgb(255, 196, 102);">MythriI</span>
+                  </span>
+                  <span class="font-bold text-white">: </span>
+                  <span data-v-89ba08de="">
+                     <div data-v-31c262c8="" data-v-89ba08de="" class="chat-emote-container">
+                        <div data-v-31c262c8="" class="relative"><img data-v-31c262c8="" data-emote-name="giritisawws" data-emote-id="1467652" src="https://files.kick.com/emotes/1467652/fullsize" alt="giritisawws" class="chat-emote"></div>
+                     </div>
+                  </span>
+                  <!---->
+               </div>
+               <!---->
+            </div>
+         </div>
+      </div>
+      
+      
+      <!---->
+   </div>
+   <!---->
+   <div data-v-606546d4="" id="chatroom-footer" class="chatroom-footer">
+      <!----><!----><!---->
+      <div data-v-fb867e09="" data-v-606546d4="" class="quick-emotes-holder">
+         <div data-v-d1d919b2="" data-v-fb867e09="" class="quick-emote-item">
+            <div data-v-d1d919b2="" class="relative">
+               <div data-v-d1d919b2="" class="flex items-center justify-center text-center align-middle h-4 w-4"><img src="https://files.kick.com/emotes/755497/fullsize" class="w-full object-contain"></div>
+            </div>
+            <!---->
+         </div>
+         <div data-v-d1d919b2="" data-v-fb867e09="" class="quick-emote-item">
+            <div data-v-d1d919b2="" class="relative">
+               <div data-v-d1d919b2="" class="flex items-center justify-center text-center align-middle h-4 w-4"><img src="https://files.kick.com/emotes/1579058/fullsize" class="w-full object-contain"></div>
+            </div>
+            <!---->
+         </div>
+         <div data-v-d1d919b2="" data-v-fb867e09="" class="quick-emote-item">
+            <div data-v-d1d919b2="" class="relative">
+               <div data-v-d1d919b2="" class="flex items-center justify-center text-center align-middle h-4 w-4"><img src="https://files.kick.com/emotes/1513865/fullsize" class="w-full object-contain"></div>
+            </div>
+            <!---->
+         </div>
+         <div data-v-d1d919b2="" data-v-fb867e09="" class="quick-emote-item">
+            <div data-v-d1d919b2="" class="relative">
+               <div data-v-d1d919b2="" class="flex items-center justify-center text-center align-middle h-4 w-4"><img src="https://files.kick.com/emotes/755520/fullsize" class="w-full object-contain"></div>
+            </div>
+            <!---->
+         </div>
+      </div>
+      <div data-v-00830dac="" data-v-606546d4="" class="relative flex flex-col gap-2.5">
+         <!---->
+         <div data-v-00830dac="" class="chat-mode text-mode">
+            <!---->
+            <div data-v-00830dac="" class="chat-message-row">
+               <div data-v-00830dac="" class="my-auto ml-1.5 cursor-pointer">
+                  <!---->
+               </div>
+               <div data-v-00830dac="" class="chat-input-container">
+                  <div data-v-00830dac="" class="chat-input-wrapper">
+                     <div data-v-00830dac="" id="message-input" contenteditable="true" data-placeholder="Send message..." class="chat-input" spellcheck="false"></div>
+                  </div>
+               </div>
+               <div data-v-2d4fb274="" data-v-00830dac="" class="relative my-auto">
+                  <button data-v-f8fbb063="" data-v-2d4fb274="" class="variant-text size-md base-icon-button">
+                     <div data-v-f8fbb063="" class="base-icon icon" style="width: 20px; height: 20px;">
+                        <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M11 2H5L2 5V11L5 14H11L14 11V5L11 2ZM10.25 5C10.8725 5 11.375 5.5025 11.375 6.125C11.375 6.7475 10.8725 7.25 10.25 7.25C9.6275 7.25 9.125 6.7475 9.125 6.125C9.125 5.5025 9.6275 5 10.25 5ZM5.75 5C6.3725 5 6.875 5.5025 6.875 6.125C6.875 6.7475 6.3725 7.25 5.75 7.25C5.1275 7.25 4.625 6.7475 4.625 6.125C4.625 5.5025 5.1275 5 5.75 5ZM11.75 9.875C11.0188 10.6062 10.6062 11.0188 9.875 11.75H6.125C5.39375 11.0188 4.98125 10.6062 4.25 9.875V8.75H11.75V9.875Z" fill="currentColor"></path>
+                        </svg>
+                     </div>
+                  </button>
+                  <!---->
+               </div>
+
+
+
+            </div>
+         </div>
+         <div data-v-00830dac="" class="send-row">
+            <!---->
+            <div data-v-00830dac="" class="relative">
+               <button data-v-f8fbb063="" data-v-00830dac="" class="variant-text size-md base-icon-button">
+                  <div data-v-f8fbb063="" class="base-icon icon" style="width: 20px; height: 20px;">
+                     <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.8191 7.99813C12.8191 7.64949 12.7816 7.30834 12.7104 6.97844L13.8913 6.29616L12.3918 3.69822L11.2071 4.38051C10.7048 3.9269 10.105 3.57076 9.44517 3.35708V2H6.44611V3.36082C5.78632 3.57451 5.19025 3.9269 4.68416 4.38426L3.49953 3.70197L2 6.29616L3.18088 6.97844C3.10965 7.30834 3.07217 7.64949 3.07217 7.99813C3.07217 8.34677 3.10965 8.68791 3.18088 9.01781L2 9.70009L3.49953 12.298L4.68416 11.6157C5.1865 12.0694 5.78632 12.4255 6.44611 12.6392V14H9.44517V12.6392C10.105 12.4255 10.701 12.0731 11.2071 11.6157L12.3918 12.298L13.8913 9.70009L12.7104 9.01781C12.7816 8.68791 12.8191 8.34677 12.8191 7.99813ZM9.82006 9.87254H6.07123V6.12371H9.82006V9.87254Z" fill="currentColor"></path>
+                     </svg>
+                  </div>
+               </button>
+            </div>
+            <button data-v-6dc57221="" data-v-00830dac="" class="variant-action size-md base-button" disabled="">
+               <div data-v-6dc57221="" class="button-content">
+                  <!---->
+                  <div data-v-6dc57221="" class="inner-label">Chat</div>
+                  <!----><!---->
+               </div>
+               <!---->
+            </button>
+         </div>
+      </div>
+   </div>
+   <!---->
+</div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+<footer class="footer" id="contact">
+  <small><a href='https://beacons.ai/KickStarrTV' target='_blank'>Contact Us Beacons.AI</a> -- </small>
+  <small><a href='https://linktr.ee/KickStarrTV' target='_blank'>Contact Us Linktree</a> -- </small>
+
+  <small>Contact Us/Submit Issues/Request Ideas on: </small>
+<a href='https://twitter.com/KickStarrtv' target='_blank'>
+<svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" class="svg-inline--fa fa-twitter " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>
+</a>
+
+<a href='https://discord.gg/h3GHhysz6y' target='_blank'>
+<svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="discord" class="svg-inline--fa fa-discord " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"></path></svg>
+</a>
+
+<a href='https://github.com/KickStarrapp/KickStarr' target='_blank'>
+<svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+
+<small> email us: KickStarrTV @ pm.me</small><br>
+
+  <small>This is a independent entity not connected, associated by, owned in part, or funded with or by Kick.com or any parent company. This is a independent entity not connected, associated by, owned in part, or funded with or by any political party, political entity or elected official. Thanks to my Lord Jesus Christ for sustaining me and MelonieMac for the inspiration. Photo by <a href="https://unsplash.com/@jenrielzany?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Zany Jadraque</a> on <a href="https://unsplash.com/photos/YLdC7qO9M3g?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></small>
+  <small>This page and content and extension copyright <a href='https://linktr.ee/biolithic' target='_blank'>biolithic</a> 2023. All Rights Reserved.</small>
+  <small><a href='tos.html' target='_blank'>Terms of Service</a></small>
+  <small><a href='privacypolicy.html' target='_blank'>Privacy Policy</a></small>
+</footer>
+
+</main>
+
+<script>
+
+
+window.addEventListener('load', event => {
+  console.log('window on load done ' + window.location.href);
+  var x = null;
+  var obj = {};
+  x = document.getElementById('scbtprofilepicture1'); // hide profile pictures
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtprofilepicture1'; obj.b = false;
+      if (e.target.checked) {
+        obj.b = true;
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+  x = document.getElementById('scbtusername0'); // hide usernames
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtusername0'; obj.b = false;
+      if (e.target.checked) {
+        obj.b = true;
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+  x = document.getElementById('scbtusername4'); // hide badges
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtusername4'; obj.b = false;
+      if (e.target.checked) {
+        obj.b = true;
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+  x = document.getElementById('scbtmessage0'); // hide messages
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtmessage0'; obj.b = false;
+      if (e.target.checked) {
+        obj.b = true;
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+  x = document.getElementById('scbtmessage4'); // on new line
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtmessage4'; obj.b = false;
+      if (e.target.checked) {
+        obj.b = true;
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+  x = document.getElementById('scbtusername13'); // hide timestamps
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtusername13'; obj.b = false;
+      if (e.target.checked) {
+        obj.b = true;
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+  x = document.getElementById('scbtmessage5'); // text only
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtmessage5'; obj.b = false;
+      if (e.target.checked) {
+        obj.b = true;
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+
+
+
+
+
+
+  var x = document.getElementById('scbtusername14'); // badge size
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtusername14'; obj.b = '';
+      if (e.target.value) {
+        obj.b = e.target.value;
+        scbt_helper_apply_css_from_option(obj);
+      } else {
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+
+  var x = document.getElementById('scbtprofilepicture2'); // profile picture size
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtprofilepicture2'; obj.b = '';
+      if (e.target.value) {
+        obj.b = e.target.value;
+        scbt_helper_apply_css_from_option(obj);
+      } else {
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+// 
+
+var x = document.getElementById('scbtusername1'); // font size
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtusername1'; obj.b = '';
+      if (e.target.value) {
+        obj.b = e.target.value;
+        scbt_helper_apply_css_from_option(obj);
+      } else {
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+
+var x = document.getElementById('scbtusername2'); // font color
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtusername2'; obj.b = '';
+      if (e.target.value) {
+        obj.b = e.target.value;
+        scbt_helper_apply_css_from_option(obj);
+      } else {
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+
+var x = document.getElementById('scbtusername3'); // line height
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtusername3'; obj.b = '';
+      if (e.target.value) {
+        obj.b = e.target.value;
+        scbt_helper_apply_css_from_option(obj);
+      } else {
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+
+var x = document.getElementById('scbtusername5'); // broadcaster badge size
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtusername5'; obj.b = '';
+      if (e.target.value) {
+        obj.b = e.target.value;
+        scbt_helper_apply_css_from_option(obj);
+      } else {
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+
+var x = document.getElementById('scbtusername6');  // moderator
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtusername6'; obj.b = '';
+      if (e.target.value) {
+        obj.b = e.target.value;
+        scbt_helper_apply_css_from_option(obj);
+      } else {
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+
+var x = document.getElementById('scbtusername7'); // gifter
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtusername7'; obj.b = '';
+      if (e.target.value) {
+        obj.b = e.target.value;
+        scbt_helper_apply_css_from_option(obj);
+      } else {
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+
+var x = document.getElementById('scbtusername8'); // og
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtusername8'; obj.b = '';
+      if (e.target.value) {
+        obj.b = e.target.value;
+        scbt_helper_apply_css_from_option(obj);
+      } else {
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+
+var x = document.getElementById('scbtusername9'); // sub
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtusername9'; obj.b = '';
+      if (e.target.value) {
+        obj.b = e.target.value;
+        scbt_helper_apply_css_from_option(obj);
+      } else {
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+
+var x = document.getElementById('scbtusername10'); // founder
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtusername10'; obj.b = '';
+      if (e.target.value) {
+        obj.b = e.target.value;
+        scbt_helper_apply_css_from_option(obj);
+      } else {
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+
+var x = document.getElementById('scbtusername11'); // verified
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtusername11'; obj.b = '';
+      if (e.target.value) {
+        obj.b = e.target.value;
+        scbt_helper_apply_css_from_option(obj);
+      } else {
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+
+var x = document.getElementById('scbtusername12'); // VIP
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtusername12'; obj.b = '';
+      if (e.target.value) {
+        obj.b = e.target.value;
+        scbt_helper_apply_css_from_option(obj);
+      } else {
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+
+
+
+
+
+
+
+
+
+
+
+//
+
+var x = document.getElementById('scbtmessage1'); // font size
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtmessage1'; obj.b = '';
+      if (e.target.value) {
+        obj.b = e.target.value;
+        scbt_helper_apply_css_from_option(obj);
+      } else {
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+
+var x = document.getElementById('scbtmessage2'); // font color
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtmessage2'; obj.b = '';
+      if (e.target.value) {
+        obj.b = e.target.value;
+        scbt_helper_apply_css_from_option(obj);
+      } else {
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+
+var x = document.getElementById('scbtmessage3'); // line height
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtmessage3'; obj.b = '';
+      if (e.target.value) {
+        obj.b = e.target.value;
+        scbt_helper_apply_css_from_option(obj);
+      } else {
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+
+// 
+// 
+
+var x = document.getElementById('scbtbackground1'); // chat background color
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtbackground1'; obj.b = '';
+      if (e.target.value) {
+        obj.b = e.target.value;
+        scbt_helper_apply_css_from_option(obj);
+      } else {
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+
+var x = document.getElementById('scbtbackground2');
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtbackground2'; obj.b = '';
+      if (e.target.value) {
+        obj.b = e.target.value;
+        scbt_helper_apply_css_from_option(obj);
+      } else {
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+
+var x = document.getElementById('scbtbackground3'); // username background color
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtbackground3'; obj.b = '';
+      if (e.target.value) {
+        obj.b = e.target.value;
+        scbt_helper_apply_css_from_option(obj);
+      } else {
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+
+var x = document.getElementById('scbtbackground4');
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtbackground4'; obj.b = '';
+      if (e.target.value) {
+        obj.b = e.target.value;
+        scbt_helper_apply_css_from_option(obj);
+      } else {
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+
+var x = document.getElementById('scbtbackground5'); // message background color
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtbackground5'; obj.b = '';
+      if (e.target.value) {
+        obj.b = e.target.value;
+        scbt_helper_apply_css_from_option(obj);
+      } else {
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+
+var x = document.getElementById('scbtbackground6');
+  if (x) {
+    x.addEventListener('change', e => {
+      obj.a = 'scbtbackground6'; obj.b = '';
+      if (e.target.value) {
+        obj.b = e.target.value;
+        scbt_helper_apply_css_from_option(obj);
+      } else {
+        scbt_helper_apply_css_from_option(obj);
+      }
+    });
+  }
+
+});
+
+
+
+
+
+function scbt_helper_apply_css_from_option(obj) {
+  var css = '';
+
+  if (typeof obj == 'object') {
+
+    // hide done
+    if (obj.a == 'scbtprofilepicture1') {
+      if (obj.b === true) {
+        css = css + ''; // hide profile pictures
+       } 
+    }
+    if (obj.a == 'scbtusername0') {
+      if (obj.b === true) {
+        css = css + ' .chat-entry-username, .chat-entry span.font-bold.text-white { display: none; } '; // hide usernames
+       } 
+    }
+    if (obj.a == 'scbtusername4') {
+      if (obj.b === true) {
+        css = css + ' .chat-message-identity .badge-tooltip { display: none; } '; // hide badges
+       } 
+    }
+    if (obj.a == 'scbtmessage0') {
+      if (obj.b === true) {
+        css = css + ' .chat-entry-content { display: none; } '; // hide messages
+       } 
+    }
+    if (obj.a == 'scbtmessage4') {
+      if (obj.b === true) {
+        css = css + ' .chat-entry-content { display: block; clear: both; } '; // on new line
+       } 
+    }
+    if (obj.a == 'scbtusername13') {
+      if (obj.b === true) {
+        css = css + ' .chat-entry .text-xs.font-semibold { display: none; } '; // hide timestamps
+       } 
+    }
+    if (obj.a == 'scbtmessage5') {
+      if (obj.b === true) {
+        css = css + ' .chat-entry img, .chat-entry i, .chat-entry svg { display: none; } '; // text only
+       } 
+    }
+
+
+    
+    // number values done
+    if (obj.a == 'scbtprofilepicture2') {
+      if (obj.b > 0) {
+        var str = obj.b + 'rem';
+        css = css + '';
+      } 
+    }
+
+    if (obj.a == 'scbtusername1') {
+      if (obj.b > 0) {
+        var str = obj.b + 'rem';
+        css = css + ' .chat-entry-username { font-size: ' + str  + '; } ';
+      }
+    }
+
+    if (obj.a == 'scbtusername3') {
+      if (obj.b > 0) {
+        var str = obj.b;
+        css = css + ' .chat-entry-username { line-height: ' + str  + '; } ';
+      }
+    }
+    
+    if (obj.a == 'scbtmessage1') {
+      if (obj.b > 0) {
+        var str = obj.b + 'rem';
+        css = css + ' .chat-entry-content { font-size: ' + str  + '; } ';
+      } 
+    }
+
+    if (obj.a == 'scbtmessage3') {
+      if (obj.b > 0) {
+        var str = obj.b;
+        css = css + ' .chat-entry-content { line-height: ' + str  + '; } ';
+      }
+    }
+
+    if (obj.a == 'scbtusername14') {
+      if (obj.b > 0) {
+        var str = obj.b;
+        css = css + ' .badge-tooltip, .badge-tooltip .base-icon, .badge-tooltip svg { width: 4rem !important; height: 4rem !important; } ';
+      }
+    }
+    
+
+    // color values 
+    if (obj.a == 'scbtusername2') {
+      if (obj.b == '#ffffff') {
+        css = css + ' .chat-entry-username { opacity: .66; } ';
+      }
+      if ( (obj.b != '#ffffff') && (obj.b != '#000000') ) {
+        css = css + ' .chat-entry-username { color: ' + obj.b + ' !important; } ';
+      }
+    }
+
+
+
+
+    if (obj.a == 'scbtusername5') {
+      if (obj.b == '#ffffff') {
+        css = css + ' [data-v-11d1cc91] { opacity: .50; } ';
+      }
+      if ( (obj.b != '#ffffff') && (obj.b != '#000000') ) {
+        css = css + ' [data-v-11d1cc91] { background-color: ' + obj.b + '; border: 5px solid ' + obj.b + '; } '; // broadcaster
+      }
+    }
+
+    if (obj.a == 'scbtusername6') {
+      if (obj.b == '#ffffff') {
+        css = css + ' [data-v-c644053e] { opacity: .50; } ';
+      }
+      if ( (obj.b != '#ffffff') && (obj.b != '#000000') ) {
+        css = css + ' [data-v-c644053e] { background-color: ' + obj.b + '; border: 5px solid ' + obj.b + '; } '; // moderator
+      }
+    }
+
+    if (obj.a == 'scbtusername7') {
+      if (obj.b == '#ffffff') {
+        css = css + ' [data-v-d0e46440] { opacity: .50; } ';
+      }
+      if ( (obj.b != '#ffffff') && (obj.b != '#000000') ) {
+        css = css + ' [data-v-d0e46440] { background-color: ' + obj.b + '; border: 5px solid ' + obj.b + '; } '; // all badges
+      }
+    }
+
+    if (obj.a == 'scbtusername8') {
+      if (obj.b == '#ffffff') {
+        css = css + ' [data-v-ff0bb21a] { opacity: .50; } ';
+      }
+      if ( (obj.b != '#ffffff') && (obj.b != '#000000') ) {
+        css = css + ' [data-v-ff0bb21a] { background-color: ' + obj.b + '; border: 5px solid ' + obj.b + '; } '; // og data-v-ff0bb21a
+      }
+    }
+
+    if (obj.a == 'scbtusername9') {
+      if (obj.b == '#ffffff') {
+        css = css + ' [data-v-9200dfef] { opacity: .50; } ';
+      }
+      if ( (obj.b != '#ffffff') && (obj.b != '#000000') ) {
+        css = css + ' [data-v-9200dfef] { background-color: ' + obj.b + '; border: 5px solid ' + obj.b + '; } '; // sub 
+      }
+    }
+
+    if (obj.a == 'scbtusername10') {
+      if (obj.b == '#ffffff') {
+        css = css + ' [data-v-8bcf93d3] { opacity: .50; } ';
+      }
+      if ( (obj.b != '#ffffff') && (obj.b != '#000000') ) {
+        css = css + ' [data-v-8bcf93d3] { background-color: ' + obj.b + '; border: 5px solid ' + obj.b + '; } '; // founder
+      }
+    }
+
+    if (obj.a == 'scbtusername11') {
+      if (obj.b == '#ffffff') {
+        css = css + ' [data-v-09641b1e] { opacity: .50; } ';
+      }
+      if ( (obj.b != '#ffffff') && (obj.b != '#000000') ) {
+        css = css + ' [data-v-09641b1e] { background-color: ' + obj.b + '; border: 5px solid ' + obj.b + '; } '; // verified
+      }
+    }
+
+    if (obj.a == 'scbtusername12') {
+      if (obj.b == '#ffffff') {
+        css = css + ' [data-v-592f5460] { opacity: .50; } ';
+      }
+      if ( (obj.b != '#ffffff') && (obj.b != '#000000') ) {
+        css = css + ' [data-v-592f5460] { background-color: ' + obj.b + '; border: 5px solid ' + obj.b + '; } '; // VIP  data-v-592f5460
+      }
+    }
+
+    
+    if (obj.a == 'scbtmessage2') {
+      if (obj.b == '#ffffff') {
+        css = css + ' .chat-entry-content { background: transparent; } ';
+      }
+      if ( (obj.b != '#ffffff') && (obj.b != '#000000') ) {
+        css = css + ' .chat-entry-content { color: ' + obj.b + '; } ';
+      }
+    }
+    
+    if (obj.a == 'scbtbackground1') {
+      if (obj.b == '#ffffff') {
+        css = css + ' #chatroom { background: transparent; } ';
+      }
+      if ( (obj.b != '#ffffff') && (obj.b != '#000000') ) {
+        css = css + ' #chatroom { background-color: ' + obj.b + '; padding: 0.5rem; } ';
+      }
+    }
+
+    if (obj.a == 'scbtbackground3') {
+      if (obj.b == '#ffffff') {
+        css = css + ' .chat-entry-username { background: transparent; } ';
+      }
+      if ( (obj.b != '#ffffff') && (obj.b != '#000000') ) {
+        css = css + ' .chat-entry-username { background-color: ' + obj.b + '; padding: 0.5rem; } ';
+      }
+    }
+
+    if (obj.a == 'scbtbackground5') {
+      if (obj.b == '#ffffff') {
+        css = css + ' .chat-entry-content { background: transparent; } ';
+      }
+      if ( (obj.b != '#ffffff') && (obj.b != '#000000') ) {
+        css = css + ' .chat-entry-content { background-color: ' + obj.b + '; padding: 0.5rem; } ';
+      }
+    }
+    
+    
+  }
+
+
+  if (css != '') {
+    var head = document.getElementsByTagName('head')[0];
+    var style = document.createElement('style');
+    head.appendChild(style);
+    style.type = 'text/css';
+    if (style.styleSheet){
+      style.styleSheet.cssText = css;
+    } else {
+      style.appendChild(document.createTextNode(css));
+    }
+
+    var z = document.querySelector('#output').value;
+    document.querySelector('#output').value = z + css + "\n";
+  }
+  obj = null; css = null; a = null; head = null; style = null; return false;
+}  
+</script>
+</body></html>
