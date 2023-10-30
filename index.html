@@ -298,12 +298,30 @@ function load_image_demos() {
 function load_video_demos() {
   console.log('doing load_video_demos');
   var arr = [
-  
+
+"https://kickstarrapp.github.io/videos/kick-chat-events-10-5-23.av1.mp4",
+"https://kickstarrapp.github.io/videos/kick-chat-options-10-5-23.av1.mp4",
+"https://kickstarrapp.github.io/videos/kick-chat-replay-by-select-10-14-23.av1.mp4",
+"https://kickstarrapp.github.io/videos/kick-chat-replay-click-10-14-23.av1.mp4",
+"https://kickstarrapp.github.io/videos/kick-chat-replay-target-10-14-23.av1.mp4",
+"https://kickstarrapp.github.io/videos/kick-content-filters-10-14-23.av1.mp4",
+"https://kickstarrapp.github.io/videos/kick-copy-vod-timestamp-10-14-23.av1.mp4",
+"https://kickstarrapp.github.io/videos/kick-event-chat-10-5-23.av1.mp4",
+"https://kickstarrapp.github.io/videos/kick-features-options-10-5-23.av1.mp4",
+"https://kickstarrapp.github.io/videos/kick-feed-10-5-23.av1.mp4",
+"https://kickstarrapp.github.io/videos/kick-mobile-clip-menu-10-14-23.av1.mp4",
+"https://kickstarrapp.github.io/videos/kick-mute-options-10-5-23.av1.mp4",
+"https://kickstarrapp.github.io/videos/kick-replay-menu-10-14-23.av1.mp4",
+"https://kickstarrapp.github.io/videos/kick-saved-chat-options-10-5-23.av1.mp4",
+"https://kickstarrapp.github.io/videos/kick-stream-slices-10-15-23.av1.mp4",
+"https://kickstarrapp.github.io/videos/kick-theme-options-10-5-23.av1.mp4",
+"https://kickstarrapp.github.io/videos/kick-themer-10-5-23.av1.mp4"
+
   ];
   var theHTML = "";
   var arrl = arr.length;
   for (var i = 0; i < arrl; i++) {
-    theHTML = theHTML + "<video autoplay loop muted playsinline><source src='" + arr[i] + "' type='video/mp4; codecs=av01.0.05M.08,opus'></video><hr />";
+    theHTML = theHTML + "<video preload='none' controls loop muted playsinline><source src='" + arr[i] + "' type='video/mp4; codecs=av01.0.05M.08,opus'></video><hr />";
     document.getElementById('demos').innerHTML = theHTML;
   }
   return false;
