@@ -280,6 +280,17 @@ function load_image_demos() {
   console.log('doing load_image_demos');
   var arr = [
    
+"https://kickstarrapp.github.io/screenshots/profanityfilter2.png",
+"https://kickstarrapp.github.io/screenshots/sample731-1.png",
+"https://kickstarrapp.github.io/screenshots/sample731-3.png",
+"https://kickstarrapp.github.io/screenshots/sample731-7.png",
+"https://kickstarrapp.github.io/screenshots/sample828-2.png",
+"https://kickstarrapp.github.io/screenshots/sample828-3.png",
+"https://kickstarrapp.github.io/screenshots/sample828-4.png",
+"https://kickstarrapp.github.io/screenshots/sample828-5.png",
+"https://kickstarrapp.github.io/screenshots/screenshot7.png",
+"https://kickstarrapp.github.io/screenshots/screenshot8.png"
+
   ];
   var theHTML = "";
   var arrl = arr.length;
@@ -321,7 +332,7 @@ function load_video_demos() {
   var theHTML = "";
   var arrl = arr.length;
   for (var i = 0; i < arrl; i++) {
-    theHTML = theHTML + "<video preload='none' controls loop muted playsinline><source src='" + arr[i] + "' type='video/mp4; codecs=av01.0.05M.08,opus'></video><hr />";
+    theHTML = theHTML + "<video preload='meta' controls loop muted playsinline><source src='" + arr[i] + "' type='video/mp4; codecs=av01.0.05M.08,opus'></video><hr />";
     document.getElementById('demos').innerHTML = theHTML;
   }
   return false;
